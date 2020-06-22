@@ -1,0 +1,22 @@
+body{
+    background-image: url(../img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+/*Barra navegacion*/
+._nav{
+    background-color: rgba(13, 13, 13, 1);
+    width: 100%;
+}
+._boton_menu{
+    width: 50px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+
+/*Login*/
+._form_login{
+    background-color: rgba(0, 0, 0, 0.42);
+}
