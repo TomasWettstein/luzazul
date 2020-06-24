@@ -8,15 +8,11 @@ class Conexion{
         $user_name = "root";
         $user_pas = "";
         $dsn = "mysql:host=$host;dbname=$dbname;port=$port;charset=$charset";
-        try {
-            $db = new PDO($dsn,$user_name,$user_pas);
-        } catch(PDOExeption $e) {
-            die('Conexion Fallida'. $e->getMessage());
-        }
-
+        $db = new PDO($dsn,$user_name,$user_pas);
+     
         return $db;
     }
-    public function consultar(string $select, string $from, $where = null){
+    public static function consultar(string $select, string $from, $where = null){
         $db = Conexion :: conectar();
         if(!isset($where)){
             $sql = "SELECT $select FROM $from";
@@ -35,16 +31,16 @@ class Conexion{
         $nombre = $usuario-> getUserName();
         $email = $usuario-> getEmail();
         $password = $usuario-> getPassword(); 
-   
+        $hash = password_hash($password, PASSWORD_DEFAULT);
         $db = Conexion :: conectar();
 
-        $sql = "INSERT INTO usuarios (nombre, email, contraseña) VALUES (:nombre, :email, :password)";
+        $sql = "INSERT INTO usuarios (nombre, email, contraseña) VALUES (:nombre, :email, :hash)";
 
         $ingresar = $db-> prepare($sql);
 
         $ingresar-> bindValue(':nombre', $nombre, PDO::PARAM_STR);
         $ingresar-> bindValue(':email', $email, PDO::PARAM_STR);
-        $ingresar-> bindValue(':password', $password, PDO::PARAM_STR);
+        $ingresar-> bindValue(':hash', $hash, PDO::PARAM_STR);
 
         if ($ingresar->execute()) {
             $message = 'Successfully created new user';
@@ -53,7 +49,7 @@ class Conexion{
           }
 
     }
-    public function iniciarSesion($usuario){
+    public static function iniciarSesion($usuario){
         var_dump($usuario);
         $usuario = $_POST['email'];
         $consulta = Conexion :: consultar("*", "usuarios", "email = '$usuario'");

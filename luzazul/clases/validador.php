@@ -36,7 +36,7 @@ class Validador{
         return $errores;
     }   
 
-    public function validarLogin($usuario){
+    public static function validarLogin($usuario, $contraseña){
         $db = Conexion :: conectar();
         $user = $usuario-> getEmail();
         $consulta = Conexion :: consultar("*", "usuarios", "email = '$user'");
@@ -57,7 +57,7 @@ class Validador{
         }
 
         foreach($consulta as $key => $value){
-            if ($value['contraseña'] != $usuario-> getPassword()) {
+            if ($value['contraseña'] != password_verify($password, $contraseña)) {
              $errores['contraseña'] = 'La contraseña es incorrecta';
             }
         }

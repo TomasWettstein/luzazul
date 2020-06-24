@@ -20,9 +20,13 @@
           Productos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-danger" href="#">Bolsos</a>
           <a class="dropdown-item text-danger" href="#">Tazas</a>
-          <a class="dropdown-item text-danger" href="#">Delantales</a>
+          <a class="dropdown-item text-danger" href="#">Jarros termicos</a>
+          <a class="dropdown-item text-danger" href="#">Mate listo</a>
+          <a class="dropdown-item text-danger" href="#">Bolsos</a>
+          <a class="dropdown-item text-danger" href="#">Porta cosmeticos</a>
+          <a class="dropdown-item text-danger" href="#">Bolsas para auto</a>
+          <a class="dropdown-item text-danger" href="#">Ofertas</a>
         </div>
       </li>
       <li class="nav-item">
@@ -33,7 +37,7 @@
           Administrar
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-danger" href="#">Productos</a>
+          <a class="dropdown-item text-danger" href="crudProductos.php">Productos</a>
         </div>
       </li>
       <?php if (isset($_SESSION['nombre'])) : ?>
@@ -71,9 +75,13 @@
           Productos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item text-danger" href="#">Tazas</a>
+          <a class="dropdown-item text-danger" href="#">Jarros termicos</a>
+          <a class="dropdown-item text-danger" href="#">Mate listo</a>
           <a class="dropdown-item text-danger" href="#">Bolsos</a>
-          <a class="dropdown-item text-danger" href="#">Tazas y mates</a>
-          <a class="dropdown-item text-danger" href="#">Almoahdones</a>
+          <a class="dropdown-item text-danger" href="#">Porta cosmeticos</a>
+          <a class="dropdown-item text-danger" href="#">Bolsas para auto</a>
+          <a class="dropdown-item text-danger" href="#">Ofertas</a>
         </div>
       </li>
       <li class="nav-item">
@@ -113,9 +121,13 @@
           Productos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-danger" href="#">Action</a>
-          <a class="dropdown-item text-danger" href="#">Another action</a>
-          <a class="dropdown-item text-danger" href="#">Something else here</a>
+          <a class="dropdown-item text-danger" href="#">Tazas</a>
+          <a class="dropdown-item text-danger" href="#">Jarros termicos</a>
+          <a class="dropdown-item text-danger" href="#">Mate listo</a>
+          <a class="dropdown-item text-danger" href="#">Bolsos</a>
+          <a class="dropdown-item text-danger" href="#">Porta cosmeticos</a>
+          <a class="dropdown-item text-danger" href="#">Bolsas para auto</a>
+          <a class="dropdown-item text-danger" href="#">Ofertas</a>
         </div>
       </li>
       <li class="nav-item">

@@ -5,7 +5,9 @@ require_once('helpers.php');
 $baseDato = Conexion :: conectar();
 if ($_POST) {
   $usuario = new Usuario($_POST['nombre'] = null, $_POST['email'], $_POST['contraseña']);
-  $errores = Validador :: validarLogin($usuario);
+  $contraseña = $_POST['contraseña'];
+  $contraseñaHash = password_hash($contraseña, PASSWORD_DEFAULT);
+  $errores = Validador :: validarLogin($usuario, $contraseñaHash);
   if (!$errores) {
       Conexion :: iniciarSesion($usuario);
       // crearCookies($_POST);
@@ -23,7 +25,7 @@ include_once('partials/nav.php');
 ?>
 <section class = "col- 12 col-md-12">
     <h2 class = "text-center text-danger">Iniciar sesion</h2>
-<form action = "login.php" method="POST" class = "col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column " >
+<form action = "login.php" method="POST" class = "_form_login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  " >
   <div class="form-group d-flex flex-column">
     <label for="exampleInputEmail1" class = "text-danger d-flex ">Escriba su E-mail</label>
     <input type="email" class="form-control d-flex" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp">
