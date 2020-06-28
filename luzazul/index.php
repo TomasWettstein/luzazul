@@ -20,6 +20,9 @@ include_once('partials/nav.php');
 
     </ul>
 </div>
+
+</section>
+<section>
 <h4 class = "text-center text-dark">Te gustaron nuestros productos ¿queres realizar una compra?</h4>
 <div class = "d-flex col-12 col"> 
     

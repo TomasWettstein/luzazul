@@ -26,7 +26,7 @@ class Conexion{
             return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
         }
     }
-    public function registrarUsuario($usuario){
+    public static function registrarUsuario($usuario){
     
         $nombre = $usuario-> getUserName();
         $email = $usuario-> getEmail();
@@ -60,6 +60,19 @@ class Conexion{
             $_SESSION['is_admin'] = $value['is_admin'];
         }
         return $_SESSION;
+    }
+    public static function agregarProducto($producto){
+        var_dump($producto);
+        $nombreProducto = $producto->getProductName();
+        $precio = $producto->getPrecio();
+        $categoria = $producto->getCategoria();
+        $db = Conexion ::conectar();
+        $sql = "INSERT INTO productos (nombre, precio, categoria_id) VALUES (:nombre, :precio, :categoria_id)";
+        $agregar = $db->prepare($sql);
+        $agregar-> bindValue(':nombre', $nombreProducto, PDO::PARAM_STR);
+        $agregar-> bindValue(':precio', $precio, PDO::PARAM_STR);
+        $agregar-> bindValue(':categoria_id', $categoria, PDO::PARAM_STR);
+        $agregar->execute();
     }
 
 }

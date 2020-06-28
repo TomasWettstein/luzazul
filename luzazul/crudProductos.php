@@ -4,16 +4,15 @@ require_once('loader.php');
 require_once('helpers.php');
 $baseDato = Conexion :: conectar();
 $consulta = Conexion :: consultar("*", "productos");
-
 include_once('partials/header.php');
 ?>
 <?php if ($_SESSION) : ?>
 <?php if($_SESSION['is_admin']=== "1")  :?>
-<body> 
-<?php
-include_once('partials/nav.php');
-?>
-<section class = "col- 12 col-md-12">
+  <body> 
+    <?php
+    include_once('partials/nav.php');
+    ?>
+    <section class = "col- 12 col-md-12">
 <h1 class = "col-12 text-center">Administrar productos</h1>
 <button class = "btn btn-primary col-12 col-md-2 offset-md-5"><a class = "text-white" href="agregarProducto.php">Agregar Producto</a></button>
 <table class="table col-12 col-md-8 offset-md-2 mt-5">
@@ -30,13 +29,13 @@ include_once('partials/nav.php');
       <tbody>
         <?php foreach ($consulta as $key => $value) : ?>
           <tr>
-            <td><?= $value['id']; ?></td>
-            <td><?= $value['nombre']; ?></td>
-            <td><?= $value['precio']; ?></td>
-            <td><ion-icon name="eye-outline"></ion-icon></td>
-            <td><ion-icon name="build-outline"></ion-icon></td>
-            <td><ion-icon name="trash-outline"></ion-icon></td>
-            <td>
+            <td class = "text-white"><?= $value['id']; ?></td>
+            <td class = "text-white"><?= $value['nombre']; ?></td>
+            <td class = "text-white"><?= $value['precio']; ?></td>
+            <td class = "text-white"><ion-icon name="eye-outline"></ion-icon></td>
+            <td class = "text-white"><ion-icon name="build-outline"></ion-icon></td>
+            <td class = "text-white"><ion-icon name="trash-outline"></ion-icon></td>
+            <td class = "text-white">
               <a href="../vistas-usuario/editar.php?pregunta=<?= $value['id']; ?>"><i class="fas fa-edit"></i></a>
               <a href="../vistas-usuario/eliminar.php?pregunta=<?= $value['id']; ?>"><i class="fas fa-trash"></i></a>
             </td>

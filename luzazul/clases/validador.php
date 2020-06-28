@@ -1,6 +1,6 @@
 <?php
 class Validador{
-    public function validarRegistro($usuario, $contraseñaRep){
+    public static function validarRegistro($usuario, $contraseñaRep){
         $errores = [];
         $verificar = Conexion :: consultar("*" , "usuarios");
         $nombre = trim($usuario->getUserName());
@@ -62,6 +62,20 @@ class Validador{
             }
         }
         return $errores;
+    }
+    public static function validarProducto($producto){
+
+        $db = Conexion :: conectar();
+        $nombreProducto = trim($producto->getProductName());
+        $precio = $producto->getPrecio();
+        $errores = [];
+        if (strlen($nombreProducto) == 0) {
+            $errores['nombre'] = "El nombre no puede estar vacio";
+        } else if($precio == null) {
+            $errores['precio'] = "Debe agregar un precio";
+        }
+        return $errores;
+
     }
 }
 ?>
