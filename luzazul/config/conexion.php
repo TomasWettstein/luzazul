@@ -20,11 +20,18 @@ class Conexion{
             $query-> execute();
             return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
         }else{
-            $sql = "SELECT $select FROM $from WHERE $where";
+            $sql = "SELECT $select FROM $from WHERE id =  $where";
             $query = $db-> prepare($sql);
             $query-> execute();
             return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
         }
+    }
+    public static function consultarProductosPorCategoria(string $select, $from, $where){
+        $db = Conexion::conectar();
+        $sql = "SELECT $select FROM $from WHERE categoria_id = $where";
+        $query = $db->prepare($sql);
+        $query->execute();
+        return $consulta = $query-> fetchAll(PDO::FETCH_ASSOC);
     }
     public static function registrarUsuario($usuario){
     
@@ -50,7 +57,6 @@ class Conexion{
 
     }
     public static function iniciarSesion($usuario){
-        var_dump($usuario);
         $usuario = $_POST['email'];
         $consulta = Conexion :: consultar("*", "usuarios", "email = '$usuario'");
         foreach($consulta as $key => $value){
@@ -61,22 +67,36 @@ class Conexion{
         }
         return $_SESSION;
     }
-    public static function agregarProducto($producto){
-        var_dump($producto);
-        $nombreProducto = $producto->getProductName();
+    public static function armarFoto($imagen){
+        $nombre = $imagen["foto"]["name"];
+        $ext = pathinfo($nombre,PATHINFO_EXTENSION);
+        $archivoOrigen = $imagen["foto"]["tmp_name"];
+        $archivoDestino = dirname(__DIR__);
+        $archivoDestino = $archivoDestino."/images/";
+        $imagen = uniqid();
+        $archivoDestino = $archivoDestino.$imagen;
+
+        $archivoDestino = $archivoDestino.".".$ext;
+        
+        move_uploaded_file($archivoOrigen,$archivoDestino);
+        $imagen = $imagen.".".$ext;
+        
+        return $imagen;
+    }
+    public static function agregarProducto($producto, $imagen){
+        $nombre = $producto->getProductName();
         $precio = $producto->getPrecio();
-        $categoria = $producto->getCategoria();
-        $db = Conexion ::conectar();
-        $sql = "INSERT INTO productos (nombre, precio, categoria_id) VALUES (:nombre, :precio, :categoria_id)";
-        $agregar = $db->prepare($sql);
-        $agregar-> bindValue(':nombre', $nombreProducto, PDO::PARAM_STR);
-        $agregar-> bindValue(':precio', $precio, PDO::PARAM_STR);
-        $agregar-> bindValue(':categoria_id', $categoria, PDO::PARAM_STR);
-        $agregar->execute();
+        $foto = $imagen;
+        $categoria_id = $producto->getCategoria();
+        $db = Conexion :: conectar();
+        $sql = "INSERT INTO productos (nombre, precio, foto, categoria_id) values (:nombre, :precio, :foto , :categoria_id)";
+        $query = $db-> prepare($sql);
+        $query-> bindValue(':nombre', $nombre, PDO::PARAM_STR);
+        $query-> bindValue(':precio', $precio, PDO::PARAM_STR);
+        $query-> bindValue(':foto', $foto, PDO::PARAM_STR);
+        $query-> bindValue(':categoria_id', $categoria_id, PDO::PARAM_STR);
+        $query->execute();
     }
 
 }
-
-
-  
 ?>

@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('loader.php');
+$bd;
+$consulta = Conexion::consultar("*", "productos");
 include_once('partials/header.php');
 ?>
 
@@ -21,6 +23,19 @@ include_once('partials/nav.php');
     </ul>
 </div>
 
+</section>
+<section>
+    <h2 class="_titulo_index">Nuestros productos</h2>
+    <div class="col-12 col-md-12 d-flex flex-row flex-wrap">
+        <?php foreach ($consulta as $key => $value) :?>
+            <div class="col-12 col-md-3">
+                <h5 class="text-center text-danger"><?= $value['nombre']; ?></h5>
+                <img src="images/<?= $value['foto'];?>" style="width: 100%;" alt="">
+                <h4 class="text-center text-success" >$<?= $value['precio']; ?></h6>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    
 </section>
 <section>
 <h4 class = "text-center text-dark">Te gustaron nuestros productos ¿queres realizar una compra?</h4>

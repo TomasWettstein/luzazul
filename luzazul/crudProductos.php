@@ -32,7 +32,7 @@ include_once('partials/header.php');
             <td class = "text-white"><?= $value['id']; ?></td>
             <td class = "text-white"><?= $value['nombre']; ?></td>
             <td class = "text-white"><?= $value['precio']; ?></td>
-            <td class = "text-white"><ion-icon name="eye-outline"></ion-icon></td>
+            <td class = "text-white"><a href="mostrarProducto.php?id=<?=$value['id'];?>"><ion-icon name="eye-outline"></ion-icon></a></td>
             <td class = "text-white"><ion-icon name="build-outline"></ion-icon></td>
             <td class = "text-white"><ion-icon name="trash-outline"></ion-icon></td>
             <td class = "text-white">

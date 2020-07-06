@@ -1,8 +1,9 @@
 
+<?php $consultaCategoria = Conexion :: consultar("*", "categorias"); ?>
+
 <?php if ($_SESSION) : ?>
 
 <?php if($_SESSION['is_admin']=== "1")  :?>
-
 <nav class="navbar navbar-expand-lg  _nav">
   <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,13 +21,9 @@
           Productos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-danger" href="#">Tazas</a>
-          <a class="dropdown-item text-danger" href="#">Jarros termicos</a>
-          <a class="dropdown-item text-danger" href="#">Mate listo</a>
-          <a class="dropdown-item text-danger" href="#">Bolsos</a>
-          <a class="dropdown-item text-danger" href="#">Porta cosmeticos</a>
-          <a class="dropdown-item text-danger" href="#">Bolsas para auto</a>
-          <a class="dropdown-item text-danger" href="#">Ofertas</a>
+          <?php foreach ($consultaCategoria as $key => $value) : ?>
+            <a href="mostrarCategoria.php?id=<?=$value['id'];?>" class="dropdown-item text-danger"><?= $value['nombre'];?></a>
+          <?php endforeach; ?>
         </div>
       </li>
       <li class="nav-item">
@@ -75,13 +72,9 @@
           Productos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-danger" href="#">Tazas</a>
-          <a class="dropdown-item text-danger" href="#">Jarros termicos</a>
-          <a class="dropdown-item text-danger" href="#">Mate listo</a>
-          <a class="dropdown-item text-danger" href="#">Bolsos</a>
-          <a class="dropdown-item text-danger" href="#">Porta cosmeticos</a>
-          <a class="dropdown-item text-danger" href="#">Bolsas para auto</a>
-          <a class="dropdown-item text-danger" href="#">Ofertas</a>
+          <?php foreach ($consultaCategoria as $key => $value) : ?>
+            <a href="mostrarCategoria.php?id=<?=$value['id'];?>" class="dropdown-item text-danger"><?= $value['nombre'];?></a>
+          <?php endforeach; ?>
         </div>
       </li>
       <li class="nav-item">
@@ -121,13 +114,9 @@
           Productos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-danger" href="#">Tazas</a>
-          <a class="dropdown-item text-danger" href="#">Jarros termicos</a>
-          <a class="dropdown-item text-danger" href="#">Mate listo</a>
-          <a class="dropdown-item text-danger" href="#">Bolsos</a>
-          <a class="dropdown-item text-danger" href="#">Porta cosmeticos</a>
-          <a class="dropdown-item text-danger" href="#">Bolsas para auto</a>
-          <a class="dropdown-item text-danger" href="#">Ofertas</a>
+          <?php foreach ($consultaCategoria as $key => $value) : ?>
+            <a href="mostrarCategoria.php?id=<?=$value['id'];?>" class="dropdown-item text-danger"><?= $value['nombre'];?></a>
+          <?php endforeach; ?>
         </div>
       </li>
       <li class="nav-item">
