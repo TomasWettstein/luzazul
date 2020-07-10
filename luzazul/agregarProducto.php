@@ -3,14 +3,36 @@ session_start();
 require_once('loader.php');
 require_once('helpers.php');
 $baseDato = Conexion::conectar();
+$consulta = Conexion::consultar("*", "productos");
 $categorias = Conexion::consultar("*", "categorias");
 if ($_POST) {
     $producto = new Producto($_POST['nombre'], $_POST['precio'], $_FILES, $_POST['categoria']);
     $errores = Validador::validarProducto($producto);
     if (!$errores) {
-        $imagen = Conexion::armarFoto($producto->getFoto());
-        Conexion::agregarProducto($producto, $imagen);
-       
+        $mensaje = [];
+        $directorio = "images/";
+        $archivo = $directorio . basename($_FILES['foto']['name']);
+        $tipoDeArchivo = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
+        //Validar si es una imagen, si devuelve falso, no es imagen y si devuelve informacion es una imagen.
+        $checkImage = getimagesize($_FILES['foto']['tmp_name']);
+        if ($checkImage != false) {
+            $size = $_FILES['foto']['size'];
+            if ($size > 1000000) {
+                $mensaje['tamaño'] = "El archivo tiene que ser menor que 1mb";
+            } else {
+                //Validar tipo de imagen
+                if ($tipoDeArchivo == 'jpg' || $tipoDeArchivo == 'jpeg' || $tipoDeArchivo == 'png') {
+                    //Si se valido el archivo correctamente...
+                    $imagen = Conexion::armarFoto($producto->getFoto());
+                    Conexion::agregarProducto($producto, $imagen);
+                } else {
+                    $mensaje['archivo'] = "Ingrese un archivo valido";
+                }
+            }
+        } else {
+            $mensaje['imagen'] = "El archivo no es una imagen";
+        }
+
 
         // header('Location: crudProductos.php');
         // exit;

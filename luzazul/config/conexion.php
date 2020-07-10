@@ -97,6 +97,21 @@ class Conexion{
         $query-> bindValue(':categoria_id', $categoria_id, PDO::PARAM_STR);
         $query->execute();
     }
+    public static function modificarProducto($datos, $id){
+        $nombre = $datos['nombre'];
+        $precio = $datos['precio'];
+        $categoria = $datos['categoria'];
+        $db = Conexion::conectar();
+        $sql = "UPDATE `luzazul`.`productos` SET `nombre` = '$nombre', `precio` = '$precio', `categoria_id` = '$categoria' WHERE (`id` = '$id');";
+        $modificar = $db->prepare($sql);
+        $modificar->execute();
+    }
+    public static function eliminarProducto($id){
+        $db = Conexion::conectar();
+        $sql = "DELETE FROM `luzazul`.`productos` WHERE (`id` = '$id');";
+        $eliminar = $db->prepare($sql);
+        $eliminar->execute();
+    }
 
 }
 ?>

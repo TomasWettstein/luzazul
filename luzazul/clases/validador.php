@@ -80,5 +80,18 @@ class Validador{
         return $errores;
 
     }
+    public static function validarModificarProducto($datos){
+        $db = Conexion ::conectar();
+        $errores = [];
+        $nombre = trim($datos['nombre']);
+        $precio = $datos['precio'];
+        $categoriaId = $datos['categoria'];
+        if(empty($nombre)){
+            $errores['nombre'] = "Debe introducir un nombre";
+        } if(empty($precio)){
+            $errores['precio'] = "Debe introducir un precio";
+        }
+        return $errores;
+    }
 }
 ?>

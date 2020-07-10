@@ -13,7 +13,7 @@ include_once('partials/header.php');
     include_once('partials/nav.php');
     ?>
     <section class = "col- 12 col-md-12">
-<h1 class = "col-12 text-center">Administrar productos</h1>
+<h1 class = "col-12 text-danger text-center">Administrar productos</h1>
 <button class = "btn btn-primary col-12 col-md-2 offset-md-5"><a class = "text-white" href="agregarProducto.php">Agregar Producto</a></button>
 <table class="table col-12 col-md-8 offset-md-2 mt-5">
     <thead class="col-12">
@@ -33,12 +33,9 @@ include_once('partials/header.php');
             <td class = "text-white"><?= $value['nombre']; ?></td>
             <td class = "text-white"><?= $value['precio']; ?></td>
             <td class = "text-white"><a href="mostrarProducto.php?id=<?=$value['id'];?>"><ion-icon name="eye-outline"></ion-icon></a></td>
-            <td class = "text-white"><ion-icon name="build-outline"></ion-icon></td>
-            <td class = "text-white"><ion-icon name="trash-outline"></ion-icon></td>
-            <td class = "text-white">
-              <a href="../vistas-usuario/editar.php?pregunta=<?= $value['id']; ?>"><i class="fas fa-edit"></i></a>
-              <a href="../vistas-usuario/eliminar.php?pregunta=<?= $value['id']; ?>"><i class="fas fa-trash"></i></a>
-            </td>
+            <td class = "text-white"><a href="editarProducto.php?id=<?= $value['id']; ?>"><ion-icon name="build-outline"></ion-icon></a></td>
+            <td class = "text-white"><a href="eliminarProducto.php?id=<?= $value['id']; ?>"><ion-icon name="trash-outline"></ion-icon></a></td>
+    
           </tr>
         <?php endforeach; ?>
       </tbody>
