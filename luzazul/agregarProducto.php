@@ -87,7 +87,7 @@ include_once('partials/header.php');
                     <div class="form-group">
                         <label class="text-danger" for="exampleFormControlSelect1">Seleccione categoria</label>
                         <select name="categoria" class="form-control" id="exampleFormControlSelect1">
-                            <option value="1">Bolsos</option>                  
+                            <option value="1">Bolsos</option>
                             <option value="2">Tazas</option>
                             <option value="3">Jarros termicos</option>
                             <option value="4">Mate listo</option>

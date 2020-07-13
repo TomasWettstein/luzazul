@@ -6,4 +6,3 @@ require_once("clases/producto.php");
 require_once("clases/validador.php");
 
 $bd = conexion :: conectar();
-?>

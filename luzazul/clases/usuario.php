@@ -1,10 +1,12 @@
-<?php 
-class Usuario {
+<?php
+class Usuario
+{
     public $nombre;
     public $email;
     public $contraseña;
 
-    public function __construct($nombre = null,$email,$contraseña){
+    public function __construct($nombre = null, $email, $contraseña)
+    {
         $this->nombre = $nombre;
         $this->email = $email;
         $this->contraseña = $contraseña;
@@ -12,25 +14,31 @@ class Usuario {
 
     //SETTERS
 
-    public function setUserName($nombre){
+    public function setUserName($nombre)
+    {
         $this->nombre = $nombre;
     }
 
-    public function setEmail($email){
+    public function setEmail($email)
+    {
         $this->email - $email;
     }
-    public function setPassword($contraseña){
+    public function setPassword($contraseña)
+    {
         $this->contraseña = $contraseña;
     }
     //GETTERS
 
-    public function getUserName(){
+    public function getUserName()
+    {
         return $this->nombre;
     }
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->email;
     }
-    public function getPassword(){
+    public function getPassword()
+    {
         return $this->contraseña;
     }
 }

@@ -94,4 +94,3 @@ class Validador{
         return $errores;
     }
 }
-?>

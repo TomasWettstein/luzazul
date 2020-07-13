@@ -57,11 +57,12 @@ class Conexion{
 
     }
     public static function iniciarSesion($usuario){
-        $usuario = $_POST['email'];
-        $consulta = Conexion :: consultar("*", "usuarios", "email = '$usuario'");
+        $user = $_POST['email'];
+        $consulta = Conexion :: consultar("*", "usuarios", "email = '$user'");
         foreach($consulta as $key => $value){
             $_SESSION['id'] = $value['id'];
             $_SESSION['nombre'] = $value['nombre'];
+            $_SESSION['email'] = $value['email'];
             $_SESSION['contraseña'] = $value['contraseña'];
             $_SESSION['is_admin'] = $value['is_admin'];
         }
@@ -114,4 +115,3 @@ class Conexion{
     }
 
 }
-?>
