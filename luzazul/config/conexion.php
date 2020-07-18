@@ -26,6 +26,14 @@ class Conexion{
             return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
         }
     }
+    public static function consultarLogin(string $select, string $from, $where){
+        $db = Conexion :: conectar();
+            $sql = "SELECT $select FROM $from WHERE email =  '$where'";
+            $query = $db-> prepare($sql);
+            $query-> execute();
+            return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
+        
+    }
     public static function consultarProductosPorCategoria(string $select, $from, $where){
         $db = Conexion::conectar();
         $sql = "SELECT $select FROM $from WHERE categoria_id = $where";
@@ -56,18 +64,27 @@ class Conexion{
           }
 
     }
-    public static function iniciarSesion($usuario){
-        $user = $_POST['email'];
-        $consulta = Conexion :: consultar("*", "usuarios", "email = '$user'");
-        foreach($consulta as $key => $value){
-            $_SESSION['id'] = $value['id'];
-            $_SESSION['nombre'] = $value['nombre'];
-            $_SESSION['email'] = $value['email'];
-            $_SESSION['contraseña'] = $value['contraseña'];
-            $_SESSION['is_admin'] = $value['is_admin'];
+   public static function seteoUsuario($usuario,$datos){
+        $_SESSION["nombre"] = "$usuario[nombre]"; 
+        $_SESSION["email"] = "$usuario[email]"; 
+        $_SESSION["is_admin"] = "$usuario[is_admin]"; 
+        if($datos['recordarme'] === 'recordarme' ) {
+            setcookie('email', $datos['email'] , time()+3600);
+            setcookie('password' ,$datos['password'],time()+3600);
         }
-        return $_SESSION;
+    
     }
+    //Funcion que valida el acceso
+    public static function validarUsuario(){
+    if(isset($_SESSION['email'])){
+        return true;
+    }elseif (isset($_COOKIE['email'])) {
+        $_SESSION['email'] = $_COOKIE['email'];
+        return true;
+    }else{
+        return false;
+    }
+}
     public static function armarFoto($imagen){
         $nombre = $imagen["foto"]["name"];
         $ext = pathinfo($nombre,PATHINFO_EXTENSION);
@@ -113,5 +130,18 @@ class Conexion{
         $eliminar = $db->prepare($sql);
         $eliminar->execute();
     }
-
+   public static function buscarPorEmail($bd,$tabla,$email){
+        $sql="select * from $tabla where email='$email'";
+        $query=$bd->prepare($sql);
+        $query->execute();
+        $usuario=$query->fetch(PDO::FETCH_ASSOC);
+       
+        if($usuario !=null){
+            if($email === $usuario['email']){
+                return $usuario;
+          }  
+        }
+        return null;
+    }   
 }
+?>

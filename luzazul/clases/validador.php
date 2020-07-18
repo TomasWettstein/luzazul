@@ -30,36 +30,24 @@ class Validador{
             $errores['contraseña'] = "La constraseña debe tener un minimo de 6 caracteres";
         }
         $passwordRepeat = trim($contraseñaRep);
-        if ($contraseña != $contraseñaRep) {
+        if ($contraseña != $passwordRepeat) {
             $errores['contraseñaRep'] = "Las contraseñas deben ser iguales";
         }
         return $errores;
     }   
 
-    public static function validarLogin($usuario, $contraseña){
-        $db = Conexion :: conectar();
-        $user = $usuario-> getEmail();
-        $consulta = Conexion :: consultar("*", "usuarios", "email = '$user'");
-
+    public static function validarLogin($datos){
+    
         $errores = [];
-        $email = trim($usuario->getEmail());
-        $password = trim($usuario->getPassword());
-
-        if (strlen($email) == 0) {
-            $errores['email'] = "El email no puede estar vacio";
+        $email = trim($datos['email']);
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            $errores['email'] = "Email  inválido...";
         }
-        elseif (empty($consulta)) {
-            $errores['email'] = "El usuario no se encuentra registrado";
-        }
-
-        if (strlen($usuario-> getPassword()) == 0) {
-            $errores['contraseña'] = 'La contraseña no puede estar vacia';
-        }
-
-        foreach($consulta as $key => $value){
-            if ($value['contraseña'] != password_verify($password, $contraseña)) {
-             $errores['contraseña'] = 'La contraseña es incorrecta';
-            }
+        $password = trim($datos['contraseña']);
+        if(empty($password)){
+            $errores['contraseña'] = "Password  no lo puede dejar en blanco...";
+        }elseif (strlen($password)<6) {
+            $errores['contraseña'] = "Password  sólo debe tener un minimo de 6 digitos";
         }
         return $errores;
     }
