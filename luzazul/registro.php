@@ -29,21 +29,24 @@ include_once('partials/header.php');
     <form action="registro.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column ">
       <div class="form-group d-flex flex-column">
         <label for="exampleInputEmail1" class="text-danger d-flex ">Escriba nombre de usuario</label>
-        <input type="text" class="form-control d-flex" placeholder="Ingrese un nuevo nombre de usuario..." name="nombre" id="exampleInputEmail1">
+        <input type="text" class="form-control d-flex" placeholder="Ingrese un nuevo nombre de usuario..." name="nombre" id="nombre">
+        <p id="pUsuario"></p>
         <?php if (isset($errores['nombre'])) : ?>
           <p class="text-danger"> <?= $errores['nombre'] ?> </p>
         <?php endif ?>
       </div>
       <div class="form-group d-flex flex-column">
         <label for="exampleInputEmail1" class="text-danger d-flex ">Escriba su E-mail</label>
-        <input type="email" class="form-control d-flex" placeholder="Ingrese un email..." name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control d-flex" placeholder="Ingrese un email..." name="email" id="email" aria-describedby="emailHelp">
+        <p id="pEmail"></p>
         <?php if (isset($errores['email'])) : ?>
           <p class="text-danger"> <?= $errores['email'] ?> </p>
         <?php endif ?>
       </div>
       <div class="form-group d-flex flex-column">
         <label for="exampleInputPassword1" class="text-danger d-flex">Escriba una contraseña</label>
-        <input type="password" class="form-control" placeholder="Ingrese una contraseña..." name="contraseña" id="exampleInputPassword1">
+        <input type="password" class="form-control" placeholder="Ingrese una contraseña..." name="contraseña" id="contraseña">
+        <p id="pPass"></p>
         <?php if (isset($errores['contraseña'])) : ?>
           <p class="text-danger"> <?= $errores['contraseña'] ?> </p>
         <?php endif ?>
@@ -62,7 +65,7 @@ include_once('partials/header.php');
   </section>
 
 
-
+<script src="js/registro.js"></script>
   <?php
   include_once('partials/footer.php');
   ?>

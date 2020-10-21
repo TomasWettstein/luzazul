@@ -14,7 +14,7 @@ include_once('partials/header.php');
         <p class="_titulo_index">Luz Azul</p>
 
 
-        <div class="slider">
+        <div class="slider" style="width: 100%;">
             <ul>
                 <li><img src="img/caro1.jpeg" alt=""></li>
                 <li><img src="img/caro2.jpeg" alt=""></li>

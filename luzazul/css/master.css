@@ -9,6 +9,9 @@ body{
 ._nav{
     background-color: rgba(13, 13, 13, 1);
     width: 100%;
+    animation-name: navbar;
+    animation-duration: 3s;
+    
 }
 ._boton_menu{
     width: 50px;
@@ -21,9 +24,11 @@ body{
     font-family: 'Spirax', cursive;
     font-size: 70px;
     color: red;
+    animation-name: titulo;
+    animation-duration: 6s;
 }
 .slider{
-    width: 90%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
     height: 600px;
@@ -43,6 +48,10 @@ body{
 .slider img {
     width: 100%;
 }
+/*Login*/
+._form_login{
+    background-color: rgba(0, 0, 0, 0.42);
+}
 @keyframes cambio {
     0%{margin-left: 0;}
     30%{margin-left: 0;}
@@ -54,7 +63,13 @@ body{
     100%{margin-left: -200%;}
 
 }
-/*Login*/
-._form_login{
-    background-color: rgba(0, 0, 0, 0.42);
+@keyframes navbar {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+   
+}
+@keyframes titulo {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+   
 }

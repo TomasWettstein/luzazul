@@ -21,11 +21,6 @@ include_once('partials/header.php');
             <?php endforeach; ?>
         </div>
     </section>
-
-
-
-
-
     <?php
     include_once('partials/footer.php');
     ?>

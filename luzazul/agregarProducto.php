@@ -65,7 +65,7 @@ include_once('partials/header.php');
                         <?php endif ?>
                     </div>
                     <div class="form-group">
-                        <label class="text-danger" for="exampleFormControlInput2">Precio del producto</label>
+                        <label class="text-danger" for="exampleFormControlInput2">Foto del producto</label>
                         <input type="file" name="foto" class="form-control" id="exampleFormControlInput1">
                         <?php if (isset($errores['foto'])) : ?>
                             <p class="text-danger"> <?= $errores['foto'] ?> </p>
@@ -114,7 +114,7 @@ include_once('partials/header.php');
                 <?php
                 include_once('partials/nav.php');
                 ?>
-                <section class="col- 12 col-md-12">
+                <section class="col- 12 col-md-12 bg-danger">
                     <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
                 </section>
                 <?php
@@ -128,7 +128,7 @@ include_once('partials/header.php');
                 <?php
                 include_once('partials/nav.php');
                 ?>
-                <section class="col- 12 col-md-12">
+                <section class="col-12 col-md-12 bg-danger">
                     <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
                 </section>
                 <?php
