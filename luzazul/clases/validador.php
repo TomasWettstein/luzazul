@@ -1,6 +1,7 @@
 <?php
 class Validador{
-    public static function validarRegistro($usuario, $contraseñaRep){
+    public static function validarRegistro($usuario, $contraseñaRep)
+    {
         $errores = [];
         $verificar = Conexion :: consultar("*" , "usuarios");
         $nombre = trim($usuario->getUserName());
@@ -36,8 +37,8 @@ class Validador{
         return $errores;
     }   
 
-    public static function validarLogin($datos){
-    
+    public static function validarLogin($datos)
+    {
         $errores = [];
         $email = trim($datos['email']);
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
@@ -51,8 +52,8 @@ class Validador{
         }
         return $errores;
     }
-    public static function validarProducto($producto){
-
+    public static function validarProducto($producto)
+    {
         $db = Conexion :: conectar();
         $nombreProducto = trim($producto->getProductName());
         $errores = [];
@@ -62,9 +63,9 @@ class Validador{
             $errores['foto'] = "Debe agregar una imagen del producto";
         }
         return $errores;
-
     }
-    public static function validarModificarProducto($datos){
+    public static function validarModificarProducto($datos)
+    {
         $db = Conexion ::conectar();
         $errores = [];
         $nombre = trim($datos['nombre']);

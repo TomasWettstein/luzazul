@@ -2,24 +2,31 @@
 session_start();
 require_once('loader.php');
 require_once('helpers.php');
-if ($_POST) {
+if ($_POST) 
+{
   $email = $_POST['email'];
   $errores = Validador::validarLogin($_POST);
-  if (count($errores) == 0) {
+  if (count($errores) == 0) 
+  {
     $baseDato = Conexion::conectar();
     $usuario = Conexion::buscarPorEmail($bd, 'usuarios', $email);
-    if ($usuario == null) {
+    if ($usuario == null) 
+    {
       $errores['email'] = "Datos incorrectos verifique...";
-    } else {
-      if (password_verify($_POST['contraseña'], $usuario['contraseña']) === false) {
+    } else
+    {
+      if (password_verify($_POST['contraseña'], $usuario['contraseña']) === false) 
+      {
         $errores['contraseña'] = "Datos incorrectos verifique...";
-      } else {
-
+      } else
+      {
         Conexion::seteoUsuario($usuario, $_POST);
-        if (Conexion::validarUsuario()) {
+        if (Conexion::validarUsuario()) 
+        {
           header('location:index.php');
           exit;
-        } else {
+        } else 
+        {
           header('location:login.php');
           exit;
         }
@@ -54,9 +61,6 @@ include_once('partials/header.php');
       <button type="submit" class="btn btn-dark text-center col-4 offset-4">Enviar</button>
     </form>
   </section>
-
-
-
   <?php
   include_once('partials/footer.php');
   ?>

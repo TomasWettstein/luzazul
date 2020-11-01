@@ -5,11 +5,8 @@ $bd;
 $consulta = Conexion::consultar("*", "productos");
 include_once('partials/header.php');
 ?>
-
 <body>
-    <?php
-    include_once('partials/nav.php');
-    ?>
+<?php include_once('partials/nav.php'); ?>
     <section>
         <p class="_titulo_index">Luz Azul</p>
         <div class="slider" style="width: 100%;">
@@ -35,11 +32,10 @@ include_once('partials/header.php');
             <?php foreach ($consulta as $key => $value) : ?>
                 <div class="col-12 col-md-3">
                     <h5 class="text-center text-danger"><?= $value['nombre']; ?></h5>
-                    <img src="images/<?= $value['foto']; ?>" style="width: 100%;" alt="">
+                    <img src="images/<?= $value['foto']; ?>" class = "_producto_img" alt="">
                 </div>
             <?php endforeach; ?>
         </div>
-
     </section>
     <section>
         <h4 class="text-center text-dark">Te gustaron nuestros productos ¿queres realizar una compra?</h4>

@@ -34,6 +34,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item text-danger" href="crudProductos.php">Productos</a>
+              <a class="dropdown-item text-danger" href="crudCategorias.php">Categorias</a>
             </div>
           </li>
           <?php if (isset($_SESSION['nombre'])) : ?>

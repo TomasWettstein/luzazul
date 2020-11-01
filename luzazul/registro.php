@@ -3,24 +3,21 @@ session_start();
 require_once('loader.php');
 require_once('helpers.php');
 $baseDato = Conexion::conectar();
-if ($_POST) {
+if ($_POST) 
+{
   $usuario = new Usuario($_POST['nombre'], $_POST['email'], $_POST['contraseña']);
   $errores = Validador::validarRegistro($usuario, $_POST['contraseñaRep']);
-  if (!$errores) {
+  if (!$errores) 
+  {
     Conexion::registrarUsuario($usuario);
     header('Location: login.php');
     exit;
   }
 }
-
-
 include_once('partials/header.php');
 ?>
-
 <body>
-  <?php
-  include_once('partials/nav.php');
-  ?>
+  <?php include_once('partials/nav.php'); ?>
   <section class="col- 12 col-md-12">
     <h2 class="text-center text-danger">Registro</h2>
     <?php if (!empty($message)) : ?>
@@ -66,6 +63,4 @@ include_once('partials/header.php');
 
 
 <script src="js/registro.js"></script>
-  <?php
-  include_once('partials/footer.php');
-  ?>
+<?php include_once('partials/footer.php'); ?>

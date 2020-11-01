@@ -11,7 +11,4 @@ function dd(...$input)
     var_dump($input);
     exit;
 }
-
-
-
 ?>

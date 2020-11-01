@@ -7,9 +7,7 @@ include_once('partials/header.php');
 ?>
 
 <body>
-    <?php
-    include_once('partials/nav.php');
-    ?>
+    <?php include_once('partials/nav.php'); ?>
     <section>
         <div class="col-12 col-md-12 d-flex flex-row flex-wrap">
             <?php foreach ($productoSeleccionado as $key => $value) : ?>
@@ -21,11 +19,4 @@ include_once('partials/header.php');
             <?php endforeach; ?>
         </div>
     </section>
-
-
-
-
-
-    <?php
-    include_once('partials/footer.php');
-    ?>
+    <?php include_once('partials/footer.php'); ?>
