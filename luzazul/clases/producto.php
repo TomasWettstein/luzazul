@@ -32,10 +32,6 @@ class Producto
     {
         return $this->nombre;
     }
-    public function getPrecio()
-    {
-        return $this->precio;
-    }
     public function getFoto()
     {
         return $this->foto;

@@ -30,7 +30,7 @@ include_once('partials/header.php');
           <td class="text-white"><?= $value['nombre']; ?></td>
           <td class="text-white"><a href="mostrarProducto.php?id=<?= $value['id']; ?>"><ion-icon name="eye-outline"></ion-icon></a></td>
           <td class="text-white"><a href="editarProducto.php?id=<?= $value['id']; ?>"><ion-icon name="build-outline"></ion-icon></a></td>
-          <td class="text-white"><a onclick="return confirm('¿Estas seguro que queres eliminar el proyecto?')" href="eliminarProducto.php?id=<?= $value['id']; ?>"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <td class="text-white"><a onclick="return confirm('¿Estas seguro que queres eliminar este pruducto?')" href="eliminarProducto.php?id=<?= $value['id']; ?>"><ion-icon name="trash-outline"></ion-icon></a></td>
         </tr>
         <?php endforeach; ?>
       </tbody>
