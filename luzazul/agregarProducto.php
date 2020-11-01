@@ -6,7 +6,7 @@ $baseDato = Conexion::conectar();
 $consulta = Conexion::consultar("*", "productos");
 $categorias = Conexion::consultar("*", "categorias");
 if ($_POST) {
-    $producto = new Producto($_POST['nombre'], $_POST['precio'], $_FILES, $_POST['categoria']);
+    $producto = new Producto($_POST['nombre'], $_FILES, $_POST['categoria']);
     $errores = Validador::validarProducto($producto);
     if (!$errores) {
         $mensaje = [];
@@ -52,16 +52,9 @@ include_once('partials/header.php');
                 <form action="agregarProducto.php" method="POST" enctype="multipart/form-data" class="_form_login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  ">
                     <div class="form-group">
                         <label class="text-danger" for="exampleFormControlInput1">Nombre del producto</label>
-                        <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese nombre del producto...">
+                        <input type="text" name="nombre" class="form-control" value = "" id="exampleFormControlInput1" placeholder="Ingrese nombre del producto...">
                         <?php if (isset($errores['nombre'])) : ?>
                             <p class="text-danger"> <?= $errores['nombre'] ?> </p>
-                        <?php endif ?>
-                    </div>
-                    <div class="form-group">
-                        <label class="text-danger" for="exampleFormControlInput2">Precio del producto</label>
-                        <input type="number" name="precio" class="form-control" id="exampleFormControlInput1">
-                        <?php if (isset($errores['precio'])) : ?>
-                            <p class="text-danger"> <?= $errores['precio'] ?> </p>
                         <?php endif ?>
                     </div>
                     <div class="form-group">

@@ -12,17 +12,22 @@ include_once('partials/header.php');
     ?>
     <section>
         <p class="_titulo_index">Luz Azul</p>
-
-
         <div class="slider" style="width: 100%;">
             <ul>
-                <li><img src="img/caro1.jpeg" alt=""></li>
-                <li><img src="img/caro2.jpeg" alt=""></li>
-                <li><img src="img/caro3.jpeg" alt=""></li>
-
+                <li>
+                    <img src="img/caro1.jpg" alt="">
+                    <img src="img/caro2.jpg" alt="">
+                    <img src="img/caro3.jpg" alt="">
+                    <img src="img/caro4.jpg" alt="">
+                </li>
+                <li>
+                    <img src="img/caro5.jpg" alt="">
+                    <img src="img/caro6.jpg" alt="">
+                    <img src="img/caro7.jpg" alt="">
+                    <img src="img/caro8.jpg" alt="">
+                </li>
             </ul>
         </div>
-
     </section>
     <section>
         <h2 class="_titulo_index">Nuestros productos</h2>
@@ -31,7 +36,6 @@ include_once('partials/header.php');
                 <div class="col-12 col-md-3">
                     <h5 class="text-center text-danger"><?= $value['nombre']; ?></h5>
                     <img src="images/<?= $value['foto']; ?>" style="width: 100%;" alt="">
-                    <h4 class="text-center text-success">$<?= $value['precio']; ?></h6>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -40,12 +44,9 @@ include_once('partials/header.php');
     <section>
         <h4 class="text-center text-dark">Te gustaron nuestros productos ¿queres realizar una compra?</h4>
         <div class="d-flex col-12 col">
-
             <button class="btn btn-success col-12 col-sm-4 offset-sm-4 col-md-2 offset-md-5 mb-3"><a class="text-white text-center col-12" href="#">Contactenos</a></button>
-
         </div>
     </section>
-
     <?php
     include_once('partials/footer.php');
     ?>

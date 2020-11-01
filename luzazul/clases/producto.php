@@ -2,14 +2,12 @@
 class Producto
 {
     public $nombre;
-    public $precio;
     public $foto;
     public $categoria_id;
 
-    public function __construct($nombre, $precio, $foto, $categoria_id)
+    public function __construct($nombre, $foto, $categoria_id)
     {
         $this->nombre = $nombre;
-        $this->precio = $precio;
         $this->foto = $foto;
         $this->categoria_id = $categoria_id;
     }
@@ -19,11 +17,6 @@ class Producto
     public function setProductName($nombre)
     {
         $this->nombre = $nombre;
-    }
-
-    public function setPrecio($precio)
-    {
-        $this->precio = $precio;
     }
     public function setFoto($foto)
     {

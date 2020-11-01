@@ -55,14 +55,10 @@ class Validador{
 
         $db = Conexion :: conectar();
         $nombreProducto = trim($producto->getProductName());
-        $precio = $producto->getPrecio();
-        $foto = $producto->getFoto();
         $errores = [];
         if (strlen($nombreProducto) == 0) {
             $errores['nombre'] = "El nombre no puede estar vacio";
-        } else if($precio == null) {
-            $errores['precio'] = "Debe agregar un precio";
-        } else if($foto == null){
+        } else if(empty($_FILES['foto']['tmp_name'])){
             $errores['foto'] = "Debe agregar una imagen del producto";
         }
         return $errores;

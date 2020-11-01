@@ -21,7 +21,6 @@ include_once('partials/header.php');
             <tr>
               <th class="text-danger" scope="col">#</th>
               <th class="text-danger" scope="col">Nombre</th>
-              <th class="text-danger" scope="col">precio</th>
               <th class="text-danger" scope="col">Ver</th>
               <th class="text-danger" scope="col">Editar</th>
               <th class="text-danger" scope="col">Eliminar</th>
@@ -32,7 +31,6 @@ include_once('partials/header.php');
               <tr>
                 <td class="text-white"><?= $value['id']; ?></td>
                 <td class="text-white"><?= $value['nombre']; ?></td>
-                <td class="text-white"><?= $value['precio']; ?></td>
                 <td class="text-white"><a href="mostrarProducto.php?id=<?= $value['id']; ?>">
                     <ion-icon name="eye-outline"></ion-icon>
                   </a></td>

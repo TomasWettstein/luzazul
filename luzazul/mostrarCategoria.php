@@ -16,7 +16,6 @@ include_once('partials/header.php');
                 <div class="col-12 col-md-6 offset-md-3">
                     <h2 class="text-center text-danger"><?= $value['nombre']; ?></h2>
                     <img src="images/<?= $value['foto']; ?>" style="width: 100%;" alt="">
-                    <h2 class="text-center text-success">$<?= $value['precio']; ?></h2>
                 </div>
             <?php endforeach; ?>
         </div>

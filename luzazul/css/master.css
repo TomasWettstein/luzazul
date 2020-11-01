@@ -31,12 +31,12 @@ body{
     width: 100%;
     margin: auto;
     overflow: hidden;
-    height: 600px;
+    height: auto;
 }
 .slider ul{
     padding: 0;
     display: flex;
-    width: 300%;
+    width: 200%;
     animation: cambio 10s infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in;
@@ -46,7 +46,8 @@ body{
     list-style: none;
 }
 .slider img {
-    width: 100%;
+    width: 24%;
+
 }
 /*Login*/
 ._form_login{
@@ -56,11 +57,15 @@ body{
     0%{margin-left: 0;}
     30%{margin-left: 0;}
 
-    35%{margin-left: -100%;}
-    65%{margin-left: -100%;}
+    35%{margin-left: -50%}
+    65%{margin-left: -50%}
 
-    70%{margin-left: -200%;}
-    100%{margin-left: -200%;}
+    75%{margin-left: -100%;}
+    100%{margin-left: -100%;}
+
+
+
+
 
 }
 @keyframes navbar {

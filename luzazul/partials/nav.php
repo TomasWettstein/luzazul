@@ -26,7 +26,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="#">Contactenos</a>
+            <a class="nav-link text-danger" href="#">Nosotros</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,7 +77,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="#">Contactenos</a>
+            <a class="nav-link text-danger" href="#">Nosotros</a>
           </li>
           <?php if (isset($_SESSION['nombre'])) : ?>
             <li class="nav-item dropdown">
@@ -97,14 +97,14 @@
 <?php endif; ?>
 <?php if (!$_SESSION) : ?>
   <nav class="navbar navbar-expand-lg  _nav">
-    <a class="navbar-brand text-danger col-8" href="#">Productos Luz Azul</a>
+    <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon">
         <img src="img/menu.png" class="_boton_menu" alt="">
       </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav text-center">
         <li class="nav-item active">
           <a class="nav-link text-danger" href="index.php">Inicio <span class="sr-only">(current)</span></a>
         </li>
@@ -119,7 +119,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-danger" href="#">Contactenos</a>
+          <a class="nav-link text-danger" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-danger" href="login.php">Inicia Sesión</a>
