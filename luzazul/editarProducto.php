@@ -9,10 +9,11 @@ include_once('partials/header.php');
 <?php if ($_SESSION['is_admin'] === "1") : ?>
 <?php if ($_POST)
 {
-    $errores = Validador::validarModificarProducto($_POST);
+    $errores = Validador::validarModificarProducto($_POST, $_FILES);
     if (!$errores) 
     {
-        Conexion::modificarProducto($_POST, $idProducto);
+        $portada = Conexion::armarFoto($_FILES['portada']['name'], $_FILES['portada']['tmp_name']);
+        Conexion::modificarProducto($_POST, $idProducto, $portada);
         header('Location: crudProductos.php');
     }
 }?>
@@ -30,10 +31,10 @@ include_once('partials/header.php');
                 <?php endif ?>
             </div>
             <div class="form-group">
-                <label class="text-danger" for="exampleFormControlInput2">Precio del producto</label>
-                <input type="number" placeholder="<?= $value['precio'] ?>" name="precio" class="form-control" id="exampleFormControlInput1">
-                <?php if (isset($errores['precio'])) : ?>
-                    <p class="text-danger"> <?= $errores['precio'] ?> </p>
+                <label class="text-danger" for="exampleFormControlInput1">Foto de portada del producto</label>
+                <input type="file" name="portada" class="form-control" id="exampleFormControlInput1" placeholder="<?= $value['nombre'] ?>">
+                <?php if (isset($errores['portada'])) : ?>
+                    <p class="text-danger"> <?= $errores['portada'] ?> </p>
                 <?php endif ?>
             </div>
             <div class="form-group">

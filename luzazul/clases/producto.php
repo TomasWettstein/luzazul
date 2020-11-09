@@ -2,13 +2,13 @@
 class Producto
 {
     public $nombre;
-    public $foto;
+    public $portada;
     public $categoria_id;
 
-    public function __construct($nombre, $foto, $categoria_id)
+    public function __construct($nombre, $portada,  $categoria_id)
     {
         $this->nombre = $nombre;
-        $this->foto = $foto;
+        $this->portada = $portada;
         $this->categoria_id = $categoria_id;
     }
 
@@ -18,9 +18,9 @@ class Producto
     {
         $this->nombre = $nombre;
     }
-    public function setFoto($foto)
+    public function setPortada($portada)
     {
-        $this->foto = $foto;
+        $this->portada = $portada;
     }
     public function setCategoria($categoria_id)
     {
@@ -32,9 +32,9 @@ class Producto
     {
         return $this->nombre;
     }
-    public function getFoto()
+    public function getPortada()
     {
-        return $this->foto;
+        return $this->portada;
     }
     public function getCategoria()
     {

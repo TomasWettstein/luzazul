@@ -96,52 +96,94 @@ class Conexion{
             return false;
         }
     }
-    public static function armarFoto($imagen)
-    {
-        $nombre = $imagen["foto"]["name"];
-        $ext = pathinfo($nombre,PATHINFO_EXTENSION);
-        $archivoOrigen = $imagen["foto"]["tmp_name"];
-        $archivoDestino = dirname(__DIR__);
-        $archivoDestino = $archivoDestino."/images/";
-        $imagen = uniqid();
-        $archivoDestino = $archivoDestino.$imagen;
+    public static function armarFoto($name, $tmp)
+    {/*Esta funcion ya guarda las imagenes en la carpeta images */
+        if(isset($tmp) && isset($name))
+        {
+                $ext = pathinfo($name,PATHINFO_EXTENSION);
+                $archivoOrigen = $tmp;
+                $archivoDestino = dirname(__DIR__);
+                $archivoDestino = $archivoDestino."/images/";
+                $imagen = uniqid();
+                $archivoDestino = $archivoDestino.$imagen;
+        
+                $archivoDestino = $archivoDestino.".".$ext;
+                
+                move_uploaded_file($archivoOrigen,$archivoDestino);
+                $imagen = $imagen.".".$ext;
+                
+                return $imagen;
+        }
 
-        $archivoDestino = $archivoDestino.".".$ext;
-        
-        move_uploaded_file($archivoOrigen,$archivoDestino);
-        $imagen = $imagen.".".$ext;
-        
-        return $imagen;
     }
     public static function agregarProducto($producto, $imagen)
     {
         $nombre = $producto->getProductName();
-        $foto = $imagen;
+        $portada = $imagen;
         $categoria_id = $producto->getCategoria();
         $db = Conexion :: conectar();
-        $sql = "INSERT INTO productos (nombre, foto, categoria_id) values (:nombre, :foto , :categoria_id)";
+        $sql = "INSERT INTO productos (nombre, portada, categoria_id) values (:nombre, :portada , :categoria_id)";
         $query = $db-> prepare($sql);
         $query-> bindValue(':nombre', $nombre, PDO::PARAM_STR);
-        $query-> bindValue(':foto', $foto, PDO::PARAM_STR);
+        $query-> bindValue(':portada', $portada, PDO::PARAM_STR);
         $query-> bindValue(':categoria_id', $categoria_id, PDO::PARAM_STR);
         $query->execute();
     }
-    public static function modificarProducto($datos, $id)
+    public static function agregarImagen($imagen, $producto_id)
+    {
+        $db = Conexion::conectar();
+        $sql = "INSERT INTO `luzazul`.`imagenes` (`imagen`, `producto_id`) VALUES ('$imagen' , '$producto_id')";
+        $query = $db->prepare($sql);
+        $query->execute();
+    }
+    public static function agregarCategoria($categoria)
+    {
+        $nombreCategoria = $categoria->getCategoriaNombre();
+        $precioCategoria = $categoria->getPrecio();
+        $db = Conexion::conectar();
+        $sql = "INSERT INTO `luzazul`.`categorias`(`nombre` , `precio`) VALUES ('$nombreCategoria', '$precioCategoria')";
+        $query = $db->prepare($sql);
+        $query->execute();
+    }
+
+    public static function modificarProducto($datos, $id, $portada)
     {
         $nombre = $datos['nombre'];
-        $precio = $datos['precio'];
         $categoria = $datos['categoria'];
         $db = Conexion::conectar();
-        $sql = "UPDATE `luzazul`.`productos` SET `nombre` = '$nombre', `precio` = '$precio', `categoria_id` = '$categoria' WHERE (`id` = '$id');";
+        $sql = "UPDATE `luzazul`.`productos` SET `nombre` = '$nombre', `portada` = '$portada', `categoria_id` = '$categoria' WHERE (`id` = '$id');";
         $modificar = $db->prepare($sql);
         $modificar->execute();
+    }
+    public static function eliminarImagenesProducto($id)
+    {
+        $db = Conexion::conectar();
+        $sqlUno = "DELETE FROM `luzazul`.`imagenes` WHERE (`producto_id` = '$id');";
+        $eliminarImagenes = $db->prepare($sqlUno);
+        $eliminarImagenes->execute();
     }
     public static function eliminarProducto($id)
     {
         $db = Conexion::conectar();
-        $sql = "DELETE FROM `luzazul`.`productos` WHERE (`id` = '$id');";
-        $eliminar = $db->prepare($sql);
-        $eliminar->execute();
+        $sqldos = "DELETE FROM `luzazul`.`productos` WHERE (`id` = '$id');";
+        $eliminarProducto = $db->prepare($sqldos);
+        $eliminarProducto->execute();
+    }
+    public static function modificarAi($id)
+    {
+        $db = Conexion::conectar();
+        $consulta = "SELECT * FROM productos ORDER BY ID DESC LIMIT 1";
+        $ultimoId= $db->prepare($consulta);
+        $ultimoId->execute();
+        $ultimo = $ultimoId->fetch(PDO::FETCH_ASSOC);
+        $idFinal = $ultimo['id'] + 1;
+        if("$idFinal" === $id)
+        {
+        $sql = "ALTER TABLE `luzazul`.`productos` AUTO_INCREMENT = $id ;";
+        $modificarAi = $db->prepare($sql);
+        $modificarAi->execute();
+        }
+        
     }
     public static function eliminarCategoria($id)
     {

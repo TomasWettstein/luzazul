@@ -10,8 +10,11 @@ include_once('partials/header.php')
 <?php if (isset($_POST)) 
 {
     Conexion::eliminarProducto($id_producto);
+    Conexion::eliminarImagenesProducto($id_producto);
+    Conexion::modificarAi($id_producto);
     header('Location: crudProductos.php');
 }; ?>
+
 <?php endif; ?>
 <?php if ($_SESSION['is_admin'] === "0") : ?>
 <body>

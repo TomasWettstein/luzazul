@@ -11,16 +11,16 @@ include_once('partials/header.php');
 <body>
     <?php include_once('partials/nav.php'); ?>
     <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-danger text-center">Administrar productos</h1>
-        <button class="btn btn-primary col-12 col-md-2 offset-md-5"><a class="text-white" href="agregarProducto.php">Agregar Categoria</a></button>
+        <h1 class="col-12 text-light text-center">Administrar categorias</h1>
+        <button class="btn btn-primary col-12 col-md-2 offset-md-5"><a class="text-white" href="agregarCategoria.php">Agregar Categoria</a></button>
         <table class="table col-12 col-md-8 offset-md-2 mt-5 table-hover">
             <thead class="col-12">
                 <tr>
-                    <th class="text-danger" scope="col">#</th>
-                    <th class="text-danger" scope="col">Nombre</th>
-                    <th class="text-danger" scope="col">Precio</th>
-                    <th class="text-danger" scope="col">Editar</th>
-                    <th class="text-danger" scope="col">Eliminar</th>
+                    <th class="text-light" scope="col">#</th>
+                    <th class="text-light" scope="col">Nombre</th>
+                    <th class="text-light" scope="col">Precio</th>
+                    <th class="text-light" scope="col">Editar</th>
+                    <th class="text-light" scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>

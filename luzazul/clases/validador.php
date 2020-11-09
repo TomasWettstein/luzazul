@@ -59,22 +59,37 @@ class Validador{
         $errores = [];
         if (strlen($nombreProducto) == 0) {
             $errores['nombre'] = "El nombre no puede estar vacio";
-        } else if(empty($_FILES['foto']['tmp_name'])){
-            $errores['foto'] = "Debe agregar una imagen del producto";
+        } else if(empty($_FILES['portada']['tmp_name'])){
+            $errores['portada'] = "Debe agregar una imagen del producto";
         }
         return $errores;
     }
-    public static function validarModificarProducto($datos)
+    public static function validarCategoria($categoria)
+    {
+        $nombreCategoria = trim($categoria->getCategoriaNombre());
+        $precioCategoria = $categoria->getPrecio();
+        var_dump($precioCategoria);
+        $errores = [];
+        if (strlen($nombreCategoria) == 0) 
+        {
+            $errores['nombre'] = "Ingrese nombre de categoria";
+        }
+        if ($precioCategoria <= 0 ) 
+        {
+            $errores['precio'] = "Ingrese precio";
+        }
+        return $errores;
+    }
+    public static function validarModificarProducto($datos, $portada)
     {
         $db = Conexion ::conectar();
         $errores = [];
         $nombre = trim($datos['nombre']);
-        $precio = $datos['precio'];
         $categoriaId = $datos['categoria'];
         if(empty($nombre)){
             $errores['nombre'] = "Debe introducir un nombre";
-        } if(empty($precio)){
-            $errores['precio'] = "Debe introducir un precio";
+        } if(empty($portada['portada']['tmp_name'])){
+            $errores['portada'] = "Debe agregar una imagen del producto";
         }
         return $errores;
     }
