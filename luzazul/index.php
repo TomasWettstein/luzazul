@@ -26,6 +26,14 @@ include_once('partials/header.php');
             </ul>
         </div>
     </section>
+    <h3 class = "_descrip_index col-12 col-md-8 offset-md-2">Regalería de autora
+    Para disfrutar el arte en
+    nuestros objetos cotidianos
+    te acercamos una variedad de
+    productos con ilustraciones
+    originales y la mejor relación
+    entre precio y calidad.
+    Todos los medios de pago.</h3>
     <section>
         <h2 class="_titulo_index">Nuestros productos</h2>
         <div class="col-12 col-md-12 d-flex flex-row flex-wrap">

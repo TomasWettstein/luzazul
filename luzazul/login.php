@@ -52,7 +52,7 @@ include_once('partials/header.php');
         <?php endif ?>
       </div>
       <div class="form-group d-flex flex-column">
-        <label for="exampleInputPassword1" class="text-danger d-flex">Escriba una contraseña</label>
+        <label for="exampleInputPassword1" class="text-danger d-flex">Escriba su contraseña</label>
         <input type="password" placeholder="Ingrese su contraseña" name="contraseña" class="form-control" id="exampleInputPassword1">
         <?php if (isset($errores['contraseña'])) : ?>
           <p class="text-danger"> <?= $errores['contraseña'] ?> </p>

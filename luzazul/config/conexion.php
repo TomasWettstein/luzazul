@@ -185,6 +185,17 @@ class Conexion{
         }
         
     }
+    public static function verificarUltimoId($id)
+    {
+        $ultimoId = $id;
+        if ($ultimoId === false) {
+            return 1;
+        }else
+        {
+            $ultimoId = $ultimoId['id'] + 1;
+            return $ultimoId;
+        }
+    }
     public static function eliminarCategoria($id)
     {
         $db = Conexion::conectar();
@@ -206,6 +217,14 @@ class Conexion{
             }  
         }
         return null;
-    }   
+    } 
+    public function transformarArray($array)
+    {
+        $result = array();
+        foreach($array as $key1 => $value1)
+            foreach($value1 as $key2 => $value2)
+                $result[$key2][$key1] = $value2;
+        return $result;
+    }  
 }
 ?>

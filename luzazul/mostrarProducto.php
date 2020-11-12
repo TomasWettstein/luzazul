@@ -12,8 +12,8 @@ include_once('partials/header.php');
 
 <body>
     <?php include_once('partials/nav.php'); ?>
-    <section class = "col-12 col-md-12 d-flex flex-row">
-        <div class="col-12 col-md-6 d-flex flex-row flex-wrap mt-4">
+    <section class = "col-12 row">
+        <div class="col-12 col-md-6  mt-4">
             <?php foreach ($productoSeleccionado as $key => $value) : ?>
                 <div class="col-12 col-md-12">
                     <h2 class="text-center text-white"><?= $value['nombre']; ?></h2>
@@ -21,9 +21,9 @@ include_once('partials/header.php');
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="col-12 col-md-6 d-flex flex-row flex-wrap mt-4">
+        <div class="col-12 col-md-6 mt-4 row ml-1">
             <?php foreach ($consulta as $key => $value) : ?>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 mt-1">
                     <img src="images/<?= $value['imagen']; ?>" class = "col-12" alt="">
                 </div>
             <?php endforeach; ?>

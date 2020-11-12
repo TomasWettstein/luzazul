@@ -46,9 +46,9 @@ class Validador{
         }
         $password = trim($datos['contraseña']);
         if(empty($password)){
-            $errores['contraseña'] = "Password  no lo puede dejar en blanco...";
+            $errores['contraseña'] = "La contraseña no la puede dejar en blanco...";
         }elseif (strlen($password)<6) {
-            $errores['contraseña'] = "Password  sólo debe tener un minimo de 6 digitos";
+            $errores['contraseña'] = "La contraseña debe tener un minimo de 6 caracteres";
         }
         return $errores;
     }
@@ -59,10 +59,38 @@ class Validador{
         $errores = [];
         if (strlen($nombreProducto) == 0) {
             $errores['nombre'] = "El nombre no puede estar vacio";
-        } else if(empty($_FILES['portada']['tmp_name'])){
+        } 
+        if(empty($_FILES['portada']['tmp_name'])){
             $errores['portada'] = "Debe agregar una imagen del producto";
         }
+        if ($_FILES['portada']['size'] >= 104353300 ) {
+            $errores['portada'] = "Se supero el limite de subida, ingrese una imagen menos pesada";
+        }
         return $errores;
+    }
+    public function validarImagenes($arrayModificado)
+    {
+        $erroresImg = [];
+        if(empty($arrayModificado[0]['name']))
+        {
+            $erroresImg['imagenes'] = "Debe insertar imagenes del producto";
+        }
+        if($arrayModificado[0]['name'])
+        {
+            $extensiones_validas = ["image/jpeg", "image/jpg", "image/png"];
+            foreach ($arrayModificado as $key => $imagen) {
+                if (!in_array($imagen['type'], $extensiones_validas))
+                {
+                    $erroresImg['imagenes'] = "Las imagenes debe ser jpg, jpeg o png";
+                }
+                if ($imagen['size'] >= 104353300) {
+                    $erroresImg['imagenes'] = "Se supero el limite de subida, ingrese menos archivos o archivos menos pesados";
+                }
+            }
+        }
+        
+        return $erroresImg;
+
     }
     public static function validarCategoria($categoria)
     {

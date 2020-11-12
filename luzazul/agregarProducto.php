@@ -10,33 +10,33 @@ $consulta = "SELECT * FROM productos ORDER BY ID DESC LIMIT 1";
 $ultimo_id = $baseDato->prepare($consulta);
 $ultimo_id->execute();
 $ultimo = $ultimo_id->fetch(PDO::FETCH_ASSOC);
-var_dump($ultimo);
 /*Crear una funcion que devuelva retorne 1 si la query anterior da false y que retorno el id + 1*/
-    $idFinal = $ultimo['id'] + 1;
-
+$idVerificado = Conexion::verificarUltimoId($ultimo);
 $categorias = Conexion::consultar("*", "categorias");
 if ($_POST) 
 {
     $producto = new Producto($_POST['nombre'],$_FILES['portada'], $_POST['categoria']);
     $errores = Validador::validarProducto($producto);
-    if (!$errores) 
+    $arrayModificado = Conexion::transformarArray($_FILES['arrayImg']);
+    $erroresImg = Validador::validarImagenes($arrayModificado);
+    if (!$errores && !$erroresImg) 
     {
         $portada = Conexion::armarFoto($_FILES['portada']['name'], $_FILES['portada']['tmp_name']);
         Conexion::agregarProducto($producto, $portada);
         /*El problema esta en cuando consulto todos y le sumo uno,  si antesl elimine algun producto como se borra ese id, este sol suma uno al anterior y ya no concuerdan los id
         Abria que hacer un metodo para que cuando se elimine*/
-        $cantidadImg = count($_FILES['imagen']['name']);
+        $cantidadImg = count($_FILES['arrayImg']['name']);
         for ($i=0; $i < $cantidadImg ; $i++) { 
-            $nuevaImagen = new Imagen($idFinal);
+            $nuevaImagen = new Imagen($idVerificado);
             $directorio = "images/";
-            $archivo = $directorio . basename($_FILES['imagen']['name'][$i]);
+            $archivo = $directorio . basename($_FILES['arrayImg']['name'][$i]);
             $tipoDeArchivo = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
-            $imagen = Conexion::armarFoto($_FILES['imagen']['name'][$i], $_FILES['imagen']['tmp_name'][$i]);
+            $imagen = Conexion::armarFoto($_FILES['arrayImg']['name'][$i], $_FILES['arrayImg']['tmp_name'][$i]);
             /* Tengo que crear esta funcion de abajo para agregar las imagenes a la base de datos*/
-            Conexion::agregarImagen($imagen, $idFinal);
+            Conexion::agregarImagen($imagen, $idVerificado);
         }
+        header('Location: crudProductos.php');
     }
-    header('Location: crudProductos.php');
 }
 include_once('partials/header.php');
 ?>
@@ -56,29 +56,31 @@ include_once('partials/header.php');
             </div>
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput1">Imagen de portada del producto</label>
-                <input type="file" name="portada" class="form-control" value = "" id="exampleFormControlInput1">
+                <input type="file" name="portada" class="form-control" accept="image/*" value = "" id="exampleFormControlInput1">
                 <?php if (isset($errores['portada'])) : ?>
                     <p class="text-danger"> <?= $errores['portada'] ?> </p>
                 <?php endif ?>
             </div>
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput2">Fotos del producto</label>
-                <input type="file" name="imagen[]" multiple = "" class="form-control" id="exampleFormControlInput1">
-                    <p class="text-danger" id = "err"></p>
-   
+                <input type="file" name="arrayImg[]" multiple = "" class="form-control" accept="image/*" id="exampleFormControlInput1">
+                <?php if(isset($erroresImg['imagenes'])) : ?>   
+                    <p class = "text-danger"><?= $erroresImg['imagenes'] ?></p>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlSelect1">Seleccione categoria</label>
                 <select name="categoria" class="form-control" id="exampleFormControlSelect1">
                 <!--Hacer foreach para recorrer categorias-->
                 <?php foreach($categorias as $key => $categoria): ?>
-                    <option value="<?= $categoria['value'] ?>"><?= $categoria['nombre'] ?></option>
+                    <option value="<?= $categoria['id'] ?>"><?= $categoria['nombre'] ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
             <button type="submit" class="btn btn-dark text-center col-4 offset-4">Agregar</button>
         </form>
     </section>
+    <script src="js/validarProducto.js"></script>
 <?php include_once('partials/footer.php'); ?>
 <?php endif; ?>
 <?php if ($_SESSION['is_admin'] === "0") : ?>

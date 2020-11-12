@@ -26,7 +26,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="#">Nosotros</a>
+            <a class="nav-link text-danger" href="#">Contacto</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
