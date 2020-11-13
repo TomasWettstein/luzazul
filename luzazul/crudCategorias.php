@@ -28,7 +28,7 @@ include_once('partials/header.php');
                 <tr>
                     <td class="text-white"><?= $value['id']; ?></td>
                     <td class="text-white"><?= $value['nombre']; ?></td>
-                    <td class="text-white"><?= $value['precio']; ?></td>
+                    <td class="text-white">$<?= $value['precio']; ?></td>
                     <td class="text-white"><a href="editarCategoria.php?id=<?= $value['id']; ?>"><ion-icon name="build-outline"></ion-icon></a></td>
                     <td class="text-white"><a onclick="return confirm('¿Estas seguro que queres eliminar esta categoria?')" href="eliminarCategoria.php?id=<?= $value['id']; ?>"><ion-icon name="trash-outline"></ion-icon></a></td>
                 </tr>

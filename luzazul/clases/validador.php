@@ -96,7 +96,6 @@ class Validador{
     {
         $nombreCategoria = trim($categoria->getCategoriaNombre());
         $precioCategoria = $categoria->getPrecio();
-        var_dump($precioCategoria);
         $errores = [];
         if (strlen($nombreCategoria) == 0) 
         {

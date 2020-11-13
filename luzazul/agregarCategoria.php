@@ -4,7 +4,6 @@ require_once('loader.php');
 $conexion = Conexion::conectar();
 if($_POST)
 {
-    echo("estoy en el post");
     $categoria = new Categoria($_POST['nombre'], $_POST['precio']);
     $errores = Validador::validarCategoria($categoria);
     if (!$errores) 
@@ -21,7 +20,7 @@ include_once('partials/header.php');
 <body>
 <?php include_once('partials/nav.php');?>
 <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center text-danger">Agregar categoria</h1>
+        <h1 class="col-12 text-center text-light">Agregar categoria</h1>
         <form action="agregarCategoria.php" method="POST" class="_form_login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  ">
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput1">Nombre del producto</label>
@@ -51,20 +50,6 @@ include_once('partials/header.php');
 <?php include_once('partials/footer.php'); ?>
 
 <?php endif;?>
-<?php if(!$_SESSION) : ?>
-<body>
-<?php include_once('partials/nav.php'); ?>
-    <section class="col- 12 col-md-12 bg-danger">
-        <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
-    </section>
-<?php include_once('partials/footer.php'); ?>
-<?php if ($_SESSION['is_admin'] === "0") : ?>
-    <body>
-    <?php include_once('partials/nav.php'); ?>
-    <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
-    </section>
-    <?php include_once('partials/footer.php'); ?>
 <?php endif; ?>
 <?php if (!$_SESSION) :?>
     <body>
@@ -73,6 +58,4 @@ include_once('partials/header.php');
         <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
     </section>
     <?php include_once('partials/footer.php'); ?>
-<?php endif; ?>
-<?php endif; ?>
 <?php endif; ?>
