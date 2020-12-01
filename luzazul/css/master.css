@@ -6,20 +6,20 @@ body{
     background-attachment: fixed;
 }
 /*Barra navegacion*/
-._nav{
+.-nav{
     background-color: rgba(13, 13, 13, 1);
     width: 100%;
     animation-name: navbar;
     animation-duration: 3s;
     
 }
-._boton_menu{
+.-boton-menu{
     width: 50px;
     margin-top: -10px;
     margin-bottom: 50px;
 }
 /*Index*/
-._titulo_index{
+.-titulo{
     text-align: center;
     font-family: 'Spirax', cursive;
     font-size: 70px;
@@ -27,7 +27,7 @@ body{
     animation-name: titulo;
     animation-duration: 6s;
 }
-._descrip_index{
+.-descrip-index{
     text-align: center;
     font-family: 'Spirax', cursive;
     color: whitesmoke;
@@ -53,12 +53,9 @@ body{
 .slider img {
     width: 24.7%;
 }
-._producto_img{
-    width: 100%;
-}
 
 /*Login*/
-._form_login{
+.-form-login{
     background-color: rgba(0, 0, 0, 0.42);
 }
 @keyframes cambio {

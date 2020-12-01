@@ -155,6 +155,15 @@ class Conexion{
         $modificar = $db->prepare($sql);
         $modificar->execute();
     }
+    public static function modificarCategoria($datos, $id)
+    {
+        $nombre = $datos['nombre'];
+        $precio = $datos['precio'];
+        $db = Conexion::conectar();
+        $sql = "UPDATE `luzazul` . `categorias` SET `nombre` = '$nombre' , `precio` = '$precio' WHERE(`id` = '$id');";
+        $modificar = $db->prepare($sql);
+        $modificar->execute();
+    }
     public static function eliminarImagenesProducto($id)
     {
         $db = Conexion::conectar();

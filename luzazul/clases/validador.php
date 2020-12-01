@@ -115,8 +115,24 @@ class Validador{
         $categoriaId = $datos['categoria'];
         if(empty($nombre)){
             $errores['nombre'] = "Debe introducir un nombre";
-        } if(empty($portada['portada']['tmp_name'])){
+        } 
+        if(empty($portada['portada']['tmp_name']))
+        {
             $errores['portada'] = "Debe agregar una imagen del producto";
+        }
+        return $errores;
+    }
+    public static function validarEditarCategoria($datos)
+    {
+        $errores = [];
+        $nombre = $datos['nombre'];
+        $precio = trim($datos['precio']);
+        if (empty($nombre)) 
+        {
+            $errores['nombre'] = "El campo nombre es obligatorio";
+        }
+        if ($precio <= 0) {
+            $errores['precio'] = "El campo precio es obligatorio";
         }
         return $errores;
     }

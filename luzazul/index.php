@@ -8,7 +8,7 @@ include_once('partials/header.php');
 <body>
 <?php include_once('partials/nav.php'); ?>
     <section>
-        <p class="_titulo_index">Luz Azul</p>
+        <p class="-titulo">Luz Azul</p>
         <div class="slider" style="width: 100%;">
             <ul>
                 <li>
@@ -26,7 +26,7 @@ include_once('partials/header.php');
             </ul>
         </div>
     </section>
-    <h3 class = "_descrip_index col-12 col-md-8 offset-md-2">Regalería de autora
+    <h3 class = "-descrip-index col-12 col-md-8 offset-md-2">Regalería de autora
     Para disfrutar el arte en
     nuestros objetos cotidianos
     te acercamos una variedad de
@@ -35,11 +35,11 @@ include_once('partials/header.php');
     entre precio y calidad.
     Todos los medios de pago.</h3>
     <section>
-        <h2 class="_titulo_index">Nuestros productos</h2>
+        <h2 class="-titulo">Nuestros productos</h2>
         <div class="col-12 col-md-12 d-flex flex-row flex-wrap">
             <?php foreach ($consulta as $key => $value) : ?>
                 <div class="col-12 col-md-3 mt-3">
-                    <h5 class="text-center text-white"><?= $value['nombre']; ?></h5>
+                    <h2 class="text-center text-white"><?= $value['nombre']; ?></h2>
                     <a href="mostrarProducto.php?id=<?= $value['id']; ?>"><img src="images/<?= $value['portada']; ?>" class = "col-12" alt=""></a>
                 </div>
             <?php endforeach; ?>

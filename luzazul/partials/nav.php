@@ -3,11 +3,11 @@
 <?php if ($_SESSION) : ?>
 
   <?php if ($_SESSION['is_admin'] === "1") : ?>
-    <nav class="navbar navbar-expand-lg  _nav">
+    <nav class="navbar navbar-expand-lg -nav">
       <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
-          <img src="img/menu.png" class="_boton_menu" alt="">
+          <img src="img/menu.png" class="-boton-menu" alt="">
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -26,7 +26,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="#">Contacto</a>
+            <a class="nav-link text-danger" href="contacto.php">Contacto</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +34,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item text-danger" href="crudProductos.php">Productos</a>
-              <a class="dropdown-item text-danger" href="crudCategorias.php">Categorias</a>
+              <a class="dropdown-item text-danger" href="crudCategorias.php">Categorías</a>
             </div>
           </li>
           <?php if (isset($_SESSION['nombre'])) : ?>
@@ -55,11 +55,11 @@
 
   <?php if ($_SESSION['is_admin'] === "0") : ?>
 
-    <nav class="navbar navbar-expand-lg  _nav">
+    <nav class="navbar navbar-expand-lg  -nav">
       <a class="navbar-brand text-danger col-8" href="#">Productos Luz Azul</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
-          <img src="img/menu.png" class="_boton_menu" alt="">
+          <img src="img/menu.png" class="-boton-menu" alt="">
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -78,7 +78,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" href="#">Nosotros</a>
+            <a class="nav-link text-danger" href="contacto.php">Contacto</a>
           </li>
           <?php if (isset($_SESSION['nombre'])) : ?>
             <li class="nav-item dropdown">
@@ -97,11 +97,11 @@
   <?php endif; ?>
 <?php endif; ?>
 <?php if (!$_SESSION) : ?>
-  <nav class="navbar navbar-expand-lg  _nav">
+  <nav class="navbar navbar-expand-lg  -nav">
     <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon">
-        <img src="img/menu.png" class="_boton_menu" alt="">
+        <img src="img/menu.png" class="-boton-menu" alt="">
       </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -120,7 +120,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-danger" href="#">Nosotros</a>
+          <a class="nav-link text-danger" href="contacto.php">Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-danger" href="login.php">Inicia Sesión</a>

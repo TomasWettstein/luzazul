@@ -23,7 +23,7 @@ include_once('partials/header.php');
     <?php if (!empty($message)) : ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-    <form action="registro.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column ">
+    <form action="registro.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 -form-login d-flex flex-column ">
       <div class="form-group d-flex flex-column">
         <label for="exampleInputEmail1" class="text-danger d-flex ">Escriba nombre de usuario</label>
         <input type="text" class="form-control d-flex" placeholder="Ingrese un nuevo nombre de usuario..." name="nombre" id="nombre">
@@ -56,7 +56,7 @@ include_once('partials/header.php');
         <?php endif ?>
       </div>
       <button type="submit" class="btn btn-dark text-center col-4 offset-4">Enviar</button>
-      <span class="text-primary">Ya tenes una cuenta? <a href="login.php">Inicia sesion</a></span>
+      <span class="text-primary">¿Ya tenes una cuenta? <a href="login.php">Inicia sesion</a></span>
 
     </form>
   </section>
