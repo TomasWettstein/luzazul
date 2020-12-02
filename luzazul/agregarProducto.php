@@ -46,7 +46,7 @@ include_once('partials/header.php');
 <?php include_once('partials/nav.php'); ?>
     <section class="col- 12 col-md-12">
         <h1 class="col-12 text-center text-light">Agregar producto</h1>
-        <form action="agregarProducto.php" method="POST" enctype="multipart/form-data" class="_form_login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  ">
+        <form action="agregarProducto.php" method="POST" enctype="multipart/form-data" class="-form-login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  ">
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput1">Nombre del producto</label>
                 <input type="text" name="nombre" class="form-control" value = "" id="nombre" placeholder="Ingrese nombre del producto...">

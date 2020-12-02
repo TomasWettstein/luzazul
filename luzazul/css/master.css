@@ -83,3 +83,20 @@ body{
         width: 24%;
     }
 }
+.-full-screen{
+    -webkit-transition:all .9s ease; /* Safari y Chrome */
+    -moz-transition:all .9s ease; /* Firefox */
+    -o-transition:all .9s ease; /* IE 9 */
+    -ms-transition:all .9s ease; /* Opera */
+    width: 100%;
+}
+.-full-screen:hover{
+    -webkit-transform:scale(1.10);
+    -moz-transform:scale(1.10);
+    -ms-transform:scale(1.10);
+    -o-transform:scale(1.10);
+    transform:scale(1.10);
+}
+.-lista-contacto{
+    list-style: none;
+}

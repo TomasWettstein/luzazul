@@ -6,7 +6,7 @@ require_once('partials/header.php');
     <?php require_once('partials/nav.php'); ?>
     <h2 class = "-titulo">Contacto</h2>
     <section class = "col-12">
-        <ul class  = "col-12">
+        <ul class  = "col-12 -lista-contacto">
             <li class = "col-12 col-md-4 offset-md-4 border-top">
                 <img src="img/wpp.png" alt="" class = "col-6 offset-3 col-md-4 offset-md-4">
                 <h2 class = "text-center text-white">11 3443 7090</h2>

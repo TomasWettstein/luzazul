@@ -29,4 +29,5 @@ include_once('partials/header.php');
             <?php endforeach; ?>
         </div>
     </section>
+    <script src="js/fullscreen.js"></script>
     <?php include_once('partials/footer.php'); ?>

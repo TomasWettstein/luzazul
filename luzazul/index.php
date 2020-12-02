@@ -48,7 +48,7 @@ include_once('partials/header.php');
     <section>
         <h4 class="text-center text-white">Te gustaron nuestros productos ¿queres realizar una compra?</h4>
         <div class="d-flex col-12 col">
-            <button class="btn btn-success col-12 col-sm-4 offset-sm-4 col-md-2 offset-md-5 mb-3"><a class="text-white text-center col-12" href="#">Contactenos</a></button>
+            <button class="btn btn-success col-12 col-sm-4 offset-sm-4 col-md-2 offset-md-5 mb-3"><a class="text-white text-center col-12" href="contacto.php">Contactenos</a></button>
         </div>
     </section>
     <?php
