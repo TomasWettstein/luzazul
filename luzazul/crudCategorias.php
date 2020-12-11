@@ -11,7 +11,7 @@ include_once('partials/header.php');
 <body>
     <?php include_once('partials/nav.php'); ?>
     <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-light text-center">Administrar categorías</h1>
+        <h1 class="col-12 -titulo">Administrar categorías</h1>
         <button class="btn btn-primary col-12 col-md-2 offset-md-5"><a class="text-white" href="agregarCategoria.php">Agregar Categoria</a></button>
         <table class="table col-12 col-md-8 offset-md-2 mt-5 table-hover">
             <thead class="col-8 col-md-12">
@@ -46,6 +46,7 @@ include_once('partials/header.php');
     </section>
     <?php include_once('partials/footer.php'); ?>
     <?php endif; ?>
+    <?php endif; ?>
     <?php if (!$_SESSION) : ?>
 <body>
   <?php include_once('partials/nav.php'); ?>
@@ -53,7 +54,6 @@ include_once('partials/header.php');
         <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
     </section>
   <?php include_once('partials/footer.php'); ?>
-<?php endif; ?>
 <?php endif; ?>
 
 

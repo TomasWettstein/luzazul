@@ -8,16 +8,16 @@ require_once('partials/header.php');
     <section class = "col-12">
         <ul class  = "col-12 -lista-contacto">
             <li class = "col-12 col-md-4 offset-md-4 border-top">
-                <img src="img/wpp.png" alt="" class = "col-6 offset-3 col-md-4 offset-md-4">
-                <h2 class = "text-center text-white">11 3443 7090</h2>
+                <img src="img/wpp.png" alt="" class = "col-4 offset-4 col-md-4 offset-md-4">
+                <h2 class = "text-center -info-contacto">11 3443 7090</h2>
             </li>
             <li class = "col-12 col-md-4 offset-md-4 border-top">
-                <img src="img/insta.png" alt="" class = "col-6 offset-3 col-md-4 offset-md-4">
-                <h2 class = "text-center text-white">@productosLuzAzul</h2>
+                <img src="img/insta.png" alt="" class = "col-4 offset-4 col-md-4 offset-md-4">
+                <h2 class = "text-center -info-contacto">@productosluzazul</h2>
             </li>
             <li class = "col-12 col-md-4 offset-md-4 border-top">
-                <img src="img/correo.png" alt="" class = "col-6 offset-3 col-md-4 offset-md-4">
-                <h2 class = " text-center text-white">jazminepstein.marchi <br>@gmail.com</h2>
+                <img src="img/correo.png" alt="" class = "col-4 offset-4 col-md-4 offset-md-4">
+                <h2 class = " text-center -info-contacto">jazminepstein.marchi <br>@gmail.com</h2>
             </li>
         </ul>
     </section>

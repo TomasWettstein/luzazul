@@ -11,8 +11,8 @@ include_once('partials/header.php');
 <body>
 <?php include_once('partials/nav.php'); ?>
   <section class="col- 12 col-md-12">
-    <h1 class="col-12 text-light text-center">Administrar productos</h1>
-    <button class="btn btn-primary col-12 col-md-2 offset-md-5"><a class="text-white" href="agregarProducto.php">Agregar Producto</a></button>
+    <h1 class="col-12 -titulo">Administrar productos</h1>
+    <button class="btn btn-primary col-4 offset-4 col-md-2 offset-md-5"><a class="text-white" href="agregarProducto.php">Agregar Producto</a></button>
     <table class="table col-12 col-md-8 offset-md-2 mt-5 table-hover">
       <thead class="col-12">
         <tr>

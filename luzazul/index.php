@@ -27,7 +27,7 @@ include_once('partials/header.php');
         </div>
     </section>
     <h3 class = "-descrip-index col-12 col-md-8 offset-md-2">Regalería de autora
-    Para disfrutar el arte en
+    para disfrutar el arte en
     nuestros objetos cotidianos
     te acercamos una variedad de
     productos con ilustraciones

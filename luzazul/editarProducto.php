@@ -22,7 +22,7 @@ include_once('partials/header.php');
     <section>
         <h1 class="text-danger text-center">Editar producto</h1>
         <?php foreach ($productoSeleccionado as $key => $value) : ?>
-        <form action="editarProducto.php?id=<?= $value['id']; ?>" method="POST" enctype="multipart/form-data" class="_form_login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  ">
+        <form action="editarProducto.php?id=<?= $value['id']; ?>" method="POST" enctype="multipart/form-data" class="-form col-12 col-md-4 offset-md-4 mt-5 d-flex flex-column  ">
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput1">Nombre del producto</label>
                 <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="<?= $value['nombre'] ?>">

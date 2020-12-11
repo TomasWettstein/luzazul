@@ -42,8 +42,8 @@ include_once('partials/header.php');
   include_once('partials/nav.php');
   ?>
   <section class="col- 12 col-md-12">
-    <h2 class="text-center text-danger">Iniciar sesion</h2>
-    <form action="login.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 -form-login d-flex flex-column  ">
+    <h2 class="text-center -titulo">Iniciar sesion</h2>
+    <form action="login.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 -form d-flex flex-column  ">
       <div class="form-group d-flex flex-column">
         <label for="exampleInputEmail1" class="text-danger d-flex ">Escriba su E-mail</label>
         <input type="email" placeholder="Ingrese su email" class="form-control d-flex" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">

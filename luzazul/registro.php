@@ -19,11 +19,11 @@ include_once('partials/header.php');
 <body>
   <?php include_once('partials/nav.php'); ?>
   <section class="col- 12 col-md-12">
-    <h2 class="text-center text-danger">Registro</h2>
+    <h2 class="text-center -titulo">Registro</h2>
     <?php if (!empty($message)) : ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-    <form action="registro.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 -form-login d-flex flex-column ">
+    <form action="registro.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 -form d-flex flex-column ">
       <div class="form-group d-flex flex-column">
         <label for="exampleInputEmail1" class="text-danger d-flex ">Escriba nombre de usuario</label>
         <input type="text" class="form-control d-flex" placeholder="Ingrese un nuevo nombre de usuario..." name="nombre" id="nombre">

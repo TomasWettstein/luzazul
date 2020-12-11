@@ -20,8 +20,8 @@ include_once('partials/header.php');
 <body>
 <?php include_once('partials/nav.php');?>
 <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center text-light">Agregar categoria</h1>
-        <form action="agregarCategoria.php" method="POST" class="_form_login col-12 col-md-4 offset-md-4 mt-5 _form_login d-flex flex-column  ">
+        <h1 class="col-12 text-center -titulo">Agregar categoria</h1>
+        <form action="agregarCategoria.php" method="POST" class="_form_login col-12 col-md-4 offset-md-4 mt-5 -form d-flex flex-column  ">
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput1">Nombre del producto</label>
                 <input type="text" name="nombre" class="form-control" value = "" id="exampleFormControlInput1" placeholder="Ingrese nombre del producto...">

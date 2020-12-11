@@ -4,14 +4,12 @@
 
   <?php if ($_SESSION['is_admin'] === "1") : ?>
     <nav class="navbar navbar-expand-lg -nav">
-      <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
+      <a class="navbar-brand text-danger col-5 col-md-7" href="#">Productos Luz Azul</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">
-          <img src="img/menu.png" class="-boton-menu" alt="">
-        </span>
+        <span class="navbar-toggler-icon"><ion-icon class="text-white -menu" name="reorder-four-outline"></ion-icon></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav text-center">
           <li class="nav-item active">
             <a class="nav-link text-danger" href="index.php">Inicio <span class="sr-only">(current)</span></a>
           </li>
@@ -58,12 +56,10 @@
     <nav class="navbar navbar-expand-lg  -nav">
       <a class="navbar-brand text-danger col-8" href="#">Productos Luz Azul</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">
-          <img src="img/menu.png" class="-boton-menu" alt="">
-        </span>
+        <span class="navbar-toggler-icon"><ion-icon class="text-white -menu" name="reorder-four-outline"></ion-icon></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav text-center">
           <li class="nav-item active">
             <a class="nav-link text-danger" href="index.php">Inicio <span class="sr-only">(current)</span></a>
           </li>
@@ -100,9 +96,7 @@
   <nav class="navbar navbar-expand-lg  -nav">
     <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">
-        <img src="img/menu.png" class="-boton-menu" alt="">
-      </span>
+      <span class="navbar-toggler-icon"><ion-icon class="text-white -menu" name="reorder-four-outline"></ion-icon></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav text-center">

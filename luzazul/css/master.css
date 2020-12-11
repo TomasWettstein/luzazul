@@ -1,9 +1,5 @@
 body{
-    background-image: url(../img/bg1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: rgba(169, 40, 40, 1);
 }
 /*Barra navegacion*/
 .-nav{
@@ -13,17 +9,16 @@ body{
     animation-duration: 3s;
     
 }
-.-boton-menu{
-    width: 50px;
-    margin-top: -10px;
-    margin-bottom: 50px;
+.-menu{
+    font-size: 40px;
+    margin-top: -5px;
 }
 /*Index*/
 .-titulo{
     text-align: center;
     font-family: 'Spirax', cursive;
-    font-size: 70px;
-    color: red;
+    font-size: 63px;
+    color: black;
     animation-name: titulo;
     animation-duration: 6s;
 }
@@ -47,15 +42,17 @@ body{
     animation-timing-function: ease-in;
 }
 .slider li{
+    display: flex;
     width: 100%;
     list-style: none;
 }
 .slider img {
-    width: 24.7%;
+    display: flex;
+    width: 25%;
 }
 
 /*Login*/
-.-form-login{
+.-form{
     background-color: rgba(0, 0, 0, 0.42);
 }
 @keyframes cambio {
@@ -76,12 +73,6 @@ body{
 @keyframes titulo {
     0%{opacity: 0;}
     100%{opacity: 1;}
-   
-}
-@media(max-width: 1100px){
-    .slider img {
-        width: 24%;
-    }
 }
 .-full-screen{
     -webkit-transition:all .9s ease; /* Safari y Chrome */
@@ -97,6 +88,15 @@ body{
     -o-transform:scale(1.10);
     transform:scale(1.10);
 }
+/*Contacto*/
 .-lista-contacto{
     list-style: none;
+}
+.-info-contacto{
+    font-size: 24px;
+}
+@media(max-width: 400px){
+    .-titulo{
+        font-size: 37px;
+    }
 }

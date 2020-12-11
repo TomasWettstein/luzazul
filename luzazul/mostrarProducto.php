@@ -16,7 +16,7 @@ include_once('partials/header.php');
         <div class="col-12 col-md-6 offset-md-3  mt-4">
             <?php foreach ($productoSeleccionado as $key => $value) : ?>
                 <div class="col-12 col-md-12">
-                    <h2 class="text-center text-white"><?= $value['nombre']; ?></h2>
+                    <h2 class="text-center -titulo"><?= $value['nombre']; ?></h2>
                     <img src="images/<?= $value['portada']; ?>" class = "col-12" alt="">
                 </div>
             <?php endforeach; ?>

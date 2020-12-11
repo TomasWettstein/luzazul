@@ -3,7 +3,7 @@ class Imagen{
     public $imagen;
     public $producto_id;
 
-    public function __contruct( $producto_id)
+    public function __contruct($producto_id)
     {
         $this->producto_id = $producto_id;
     }
