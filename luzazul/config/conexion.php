@@ -227,7 +227,7 @@ class Conexion{
         }
         return null;
     } 
-    public function transformarArray($array)
+    public static function transformarArray($array)
     {
         $result = array();
         foreach($array as $key1 => $value1)

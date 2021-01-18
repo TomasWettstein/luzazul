@@ -5,8 +5,8 @@
   <?php if ($_SESSION['is_admin'] === "1") : ?>
     <nav class="navbar navbar-expand-lg -nav">
       <a class="navbar-brand text-danger col-5 col-md-7" href="#">Productos Luz Azul</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><ion-icon class="text-white -menu" name="reorder-four-outline"></ion-icon></span>
+      <button class="navbar-toggler cajaboton" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <ion-icon class="text-white boton" name="reorder-four-outline"></ion-icon>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav text-center">
@@ -55,8 +55,8 @@
 
     <nav class="navbar navbar-expand-lg  -nav">
       <a class="navbar-brand text-danger col-8" href="#">Productos Luz Azul</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><ion-icon class="text-white -menu" name="reorder-four-outline"></ion-icon></span>
+      <button class="navbar-toggler cajaboton" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <ion-icon class="text-white boton" name="reorder-four-outline"></ion-icon>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav text-center">
@@ -95,8 +95,8 @@
 <?php if (!$_SESSION) : ?>
   <nav class="navbar navbar-expand-lg  -nav">
     <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><ion-icon class="text-white -menu" name="reorder-four-outline"></ion-icon></span>
+    <button class="navbar-toggler cajaboton" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <ion-icon class="text-white boton" name="reorder-four-outline"></ion-icon>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav text-center">

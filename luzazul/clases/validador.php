@@ -68,7 +68,7 @@ class Validador{
         }
         return $errores;
     }
-    public function validarImagenes($arrayModificado)
+    public static function validarImagenes($arrayModificado)
     {
         $erroresImg = [];
         if(empty($arrayModificado[0]['name']))

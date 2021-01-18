@@ -22,7 +22,7 @@ class Categoria
     {
         return $this->nombre;
     }
-    public function setPrecio()
+    public function setPrecio($precio)
     {
         $this->precio = $precio;
     }

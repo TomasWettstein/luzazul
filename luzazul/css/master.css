@@ -1,5 +1,7 @@
 body{
     background-color: rgba(169, 40, 40, 1);
+    font-family: 'Spirax', cursive;
+    font-size: 19px;
 }
 /*Barra navegacion*/
 .-nav{
@@ -9,14 +11,17 @@ body{
     animation-duration: 3s;
     
 }
-.-menu{
+.cajaboton:focus{
+    outline: none;
+}
+.boton{
     font-size: 40px;
     margin-top: -5px;
+    outline: none;
 }
 /*Index*/
 .-titulo{
     text-align: center;
-    font-family: 'Spirax', cursive;
     font-size: 63px;
     color: black;
     animation-name: titulo;
@@ -24,7 +29,6 @@ body{
 }
 .-descrip-index{
     text-align: center;
-    font-family: 'Spirax', cursive;
     color: whitesmoke;
 }
 .slider{
