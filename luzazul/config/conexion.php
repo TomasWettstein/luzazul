@@ -21,13 +21,15 @@ class Conexion{
             $sql = "SELECT $select FROM $from";
             $query = $db-> prepare($sql);
             $query-> execute();
-            return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
+            $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
+            return $consulta;
         }else
         {
             $sql = "SELECT $select FROM $from WHERE id =  $where";
             $query = $db-> prepare($sql);
             $query-> execute();
-            return $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
+            $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
+            return $consulta;
         }
     }
     public static function consultarLogin(string $select, string $from, $where)

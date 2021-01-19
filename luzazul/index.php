@@ -2,13 +2,33 @@
 session_start();
 include('loader.php');
 $bd;
-$consulta = Conexion::consultar("*", "productos");
+$consulta = "SELECT * FROM productos";
+$sentencia = $bd->prepare($consulta);
+$sentencia->execute();
+$productos = $sentencia->fetchAll();
+$articulosXPagina = 4;
+$totalProductos = $sentencia->rowCount();
+$paginas = ceil($totalProductos / 4 );
 include_once('partials/header.php');
 ?>
 <body>
 <?php include_once('partials/nav.php'); ?>
     <section>
         <p class="-titulo">Luz Azul</p>
+        <?php if(!$_GET){
+            header('Location:index.php?pagina=1');
+        }
+        if($_GET['pagina'] > $paginas || $_GET['pagina'] <= 0){
+            header('Location:index.php?pagina=1');
+        }
+        $iniciar = ($_GET['pagina'] - 1) * $articulosXPagina;
+        $sqlProductos = "SELECT * FROM productos LIMIT :iniciar,:narticulos";
+        $sentenciaProductos = $bd->prepare($sqlProductos);
+        $sentenciaProductos->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
+        $sentenciaProductos->bindParam(':narticulos', $articulosXPagina, PDO::PARAM_INT);
+        $sentenciaProductos->execute();
+        $cantidadProductos = $sentenciaProductos->fetchAll();
+        ?>
         <div class="slider" style="width: 100%;">
             <ul>
                 <li>
@@ -37,13 +57,22 @@ include_once('partials/header.php');
     <section>
         <h2 class="-titulo">Nuestros productos</h2>
         <div class="col-12 col-md-12 d-flex flex-row flex-wrap">
-            <?php foreach ($consulta as $key => $value) : ?>
+            <?php foreach ($cantidadProductos as $key => $value) : ?>
                 <div class="col-12 col-md-3 mt-3">
                     <h2 class="text-center text-white"><?= $value['nombre']; ?></h2>
                     <a href="mostrarProducto.php?id=<?= $value['id']; ?>"><img src="images/<?= $value['portada']; ?>" class = "col-12" alt=""></a>
                 </div>
             <?php endforeach; ?>
         </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item <?= $_GET['pagina'] <= 1 ? 'disabled' : '' ?>"><a class="page-link" href="index.php?pagina=<?= $_GET['pagina'] - 1 ?>">Anterior</a></li>
+                <?php for($i = 0; $i < $paginas; $i++ ): ?>
+                <li class="page-item <?= $_GET['pagina'] == $i + 1 ? 'active' : '' ?>"><a class="page-link" href="index.php?pagina=<?= $i + 1 ?>"><?= $i + 1 ?></a></li>
+                <?php endfor; ?>
+                <li class="page-item <?= $_GET['pagina'] >= $paginas ? 'disabled' : '' ?>"><a class="page-link" href="index.php?pagina=<?= $_GET['pagina'] + 1 ?>">Siguiente</a></li>
+            </ul>
+        </nav>
     </section>
     <section>
         <h4 class="text-center text-white">Te gustaron nuestros productos ¿queres realizar una compra?</h4>
