@@ -1,2 +1,2 @@
 # luzazul
-e-comerce emprendimiento Luz Azul
+Proyecto desarrollado para un emprendimiento de venta de productos llamado Luz Azul
