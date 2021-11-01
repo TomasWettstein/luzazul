@@ -1,23 +1,208 @@
+html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 body{
     background-color: rgba(169, 40, 40, 1);
     font-family: 'Spirax', cursive;
-    font-size: 19px;
+    font-size: 18px;
+    height: 100%;
+
 }
 /*Barra navegacion*/
-.-nav{
-    background-color: rgba(13, 13, 13, 1);
+header{
     width: 100%;
-    animation-name: navbar;
-    animation-duration: 3s;
+}
+header nav{
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+    overflow: hidden;
+    height: 66px;
+}
+.menubar{
+    display: none;
+}
+header nav a{
+    padding: 20px;
+    color: #C41717;
+    text-decoration: none;
+    display: block;
+    float: left;
+}
+header nav ul{
+    list-style: none;
+    float: right;
+}
+header nav ul li{
+    float: left;
+}
+header nav ul li a{
+    padding: 20px;
+    color: #C41717;
+    text-decoration: none;
+    display: block;
+}
+header nav ul li a:hover{
+    background-color: rgba(45, 1, 1, 0.57);
+    text-decoration: none;
+    color: #C41717;
+}
+header nav a:hover{
+    background-color: rgba(45, 1, 1, 0.57);
+    text-decoration: none;
+    color: #C41717;
+}
+@media screen  and (max-width: 865px) {
+    header nav{
+        width: 80%;
+        height: 100%;
+        margin: 0;
+        left: -100%;
+        position: fixed;
+    }
+    header nav a{
+        display: block;
+        float: none;
+    }
+    header nav ul{
+        float: none;
+    }
+    header nav ul li{
+        display: block;
+        float: none;
+        border-bottom: 1px solid rgba(230, 230, 230, 0.71);
+    }
+    .menubar{
+        display: block;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.89);
+    }
+    .menubar .btnmenu{
+        display: block;
+        padding: 20px;
+        color: #C41717;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 25px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .menubar a ion-icon{
+        float: right;
+        font-size: 38px;
+    }
+
+}
+/*Barra navegacion
+.dropdwn{
+    margin: 0 auto;
+}
+nav{
+    height: 60px;
+    background-color: black;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.logo{
+    display: inline-block;
+    padding-top: 0.8em;
+    padding-left: 1em;
+    width: 200px;
+    height: auto;
+    color: red;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 1em;
+}
+nav ul li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+}
+.dropitem{
+    display: block;
+    color: red;
+    text-decoration: none;
+    line-height: 60px;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color: red;
+}
+.droplista{
+    position: absolute;
+    top: 60px;
+    display: none;
+    background-color: black;
+    z-index: 1;
+}
+.droplistaclick{
+    display: block;
+    position: absolute;
+    top: 60px;
+    background-color: black;
+    z-index: 1;
     
 }
-.cajaboton:focus{
-    outline: none;
+nav ul ul li {
+    width: 150px;
+    float: none;
+    padding: 5px;
+    position: relative;
 }
-.boton{
+nav ul ul li a{
+    color: red;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+}
+nav ul ul li a::before{
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 1s ease;
+}
+nav ul ul li a:hover::before{
+    width: 100%;
+}
+/*nav ul ul li a:hover{
+    background-color: none;
+}
+nav ul ul li:hover{
+    background-color: black;
+}
+.toggle{
+    display: none;
+    color: white;
     font-size: 40px;
-    margin-top: -5px;
-    outline: none;
+    float: right;
+    padding-top: 6px;
+    padding-right: 0.5em;
+}*/
+/* Paginacion */
+.navpaginacion{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin-top: 1em;
+}
+.listapaginacion{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    font-size: 14px;
 }
 /*Index*/
 .-titulo{
@@ -54,6 +239,22 @@ body{
     display: flex;
     width: 25%;
 }
+.indeximg{
+    border-radius: 10px;
+    width: 100%;
+}
+/*Mostrar producto*/
+.cajaportadaproducto{
+    width: 100%;
+}
+.portada{
+    width: 30%;
+    margin: 0 auto;
+}
+.img{
+    width: 100%;
+    border-radius: 10px;
+}
 
 /*Login*/
 .-form{
@@ -68,11 +269,6 @@ body{
 
     75%{margin-left: -100%;}
     100%{margin-left: -100%;}
-}
-@keyframes navbar {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-   
 }
 @keyframes titulo {
     0%{opacity: 0;}
@@ -99,8 +295,118 @@ body{
 .-info-contacto{
     font-size: 24px;
 }
+/*Copyright */
+.footer{
+    background-color: transparent;
+    bottom: 0;
+    font-size: 13px;
+    width: 100%;
+    color: white;
+}
 @media(max-width: 400px){
     .-titulo{
         font-size: 37px;
+    }
+}
+@media(max-width: 750px){
+    /*Index*/
+    .cajaproducto{
+        text-align: center;
+    }
+    .indeximg{
+        margin: 0 auto;
+        width: 50%;
+    }
+  /*  .toggle{
+        display: block;
+    }
+    .listanav{
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: auto;
+        background-color: black;
+        z-index: 100;
+        animation: abrirnav 1s;
+        position: relative;
+    }
+    .listanavhidden{
+        margin-top: -200%;
+        margin-right: 0;
+        padding: 0;
+        width: 100vw;
+        background-color: black;
+        z-index: 100;
+    }
+    .escondernav{
+        animation: escondernav 1s;
+    }
+    nav ul li {
+        list-style: none;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        background-color: black;
+        width: 150px;
+    }
+    .dropitem{
+        display: block;
+        color: red;
+        text-decoration: none;
+        line-height: 60px;
+        position: relative;
+        padding-right: 0.7em;
+    }
+    nav ul li a:hover{
+        text-decoration: none;
+        color: red;
+    }
+    .droplista{
+        display: none;
+        background-color: black;
+    }
+    .droplistaclick{
+        display: block;
+        position: relative;
+        margin-top: -3.4em;
+        background-color: black;
+    }
+    nav ul ul li {
+        position: relative;
+        background-color: transparent;
+        display: block;
+        margin-left: 4em;
+    }
+    nav ul ul li a {
+        display: block;
+        width: 100%;
+        margin-left: 0.5em;
+    }
+    nav ul ul li a::before{
+        background:none;
+        transition: none;
+    }*/
+    /*Mostrar producto*/
+    .portada{
+        width: 70%;
+    }
+    /*Animaciones nav*/
+    @keyframes abrirnav {
+        0%{margin-top: -125%;}
+        100%{margin-top: 0%;}
+    }
+    @keyframes escondernav{
+      0%{margin-top: 0;}
+      100%{margin-top: -125%;}
+    }
+    /*Paginacion*/
+    .listapaginacion{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 12px;
     }
 }

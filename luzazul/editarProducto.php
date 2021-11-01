@@ -20,7 +20,7 @@ include_once('partials/header.php');
 <body>
 <?php include_once('partials/nav.php'); ?>
     <section>
-        <h1 class="text-danger text-center">Editar producto</h1>
+        <h1 class="-titulo">Editar producto</h1>
         <?php foreach ($productoSeleccionado as $key => $value) : ?>
         <form action="editarProducto.php?id=<?= $value['id']; ?>" method="POST" enctype="multipart/form-data" class="-form col-12 col-md-4 offset-md-4 mt-5 d-flex flex-column  ">
             <div class="form-group">
@@ -49,26 +49,36 @@ include_once('partials/header.php');
                     <option value="7">Ofertas</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label class="text-danger" for="exampleFormControlSelect1">Modificar stock</label>
+                <select name="stock" class="form-control" id="exampleFormControlSelect1">
+                    <option value="1">Hay stock</option>
+                    <option value="0">No hay stock</option>
+                </select>
+            </div>
             <?php endforeach; ?>
             <button type="submit" class="btn btn-dark text-center col-4 offset-4">Modificar</button>
         </form>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <?php include_once('partials/footer.php'); ?>
     <?php endif; ?>
     <?php if ($_SESSION['is_admin'] === "0") : ?>
 <body>
     <?php include_once('partials/nav.php'); ?>
-    <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
+    <section>
+        <h1 class="-titulo">No se puede acceder a este sitio.</h1>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <?php include_once('partials/footer.php'); ?>
     <?php endif; ?>
     <?php endif; ?>
     <?php if (!$_SESSION) : ?>
 <body>
     <?php include_once('partials/nav.php'); ?>
-    <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
+    <section>
+        <h1 class="-titulo">No se puede acceder a este sitio.</h1>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <?php include_once('partials/footer.php'); ?>
     <?php endif; ?>

@@ -18,8 +18,8 @@ include_once('partials/header.php');
 ?>
 <body>
   <?php include_once('partials/nav.php'); ?>
-  <section class="col- 12 col-md-12">
-    <h2 class="text-center -titulo">Registro</h2>
+  <section>
+    <h2 class="-titulo">Registro</h2>
     <?php if (!empty($message)) : ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
@@ -60,7 +60,6 @@ include_once('partials/header.php');
 
     </form>
   </section>
-
-
+  <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <script src="js/registro.js"></script>
 <?php include_once('partials/footer.php'); ?>

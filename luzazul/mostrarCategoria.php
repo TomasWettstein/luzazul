@@ -21,10 +21,11 @@ include_once('partials/header.php');
         <div class="col-12 col-md-12 d-flex flex-row flex-wrap">
             <?php foreach ($categoriaSeleccionada as $key => $value) : ?>
                 <div class="col-12 col-md-3">
-                    <h2 class="text-center text-white"><?= $value['nombre']; ?></h2>
-                    <a href="mostrarProducto.php?id=<?= $value['id']; ?>"><img src="images/<?= $value['portada']; ?>" class = "col-12" alt=""></a>
+                    <h4 class="text-center text-white"><?= $value['nombre']; ?></h4>
+                    <a href="mostrarProducto.php?id=<?= $value['id']; ?>"><img src="images/<?= $value['portada']; ?>" class = "img" alt=""></a>
                 </div>
             <?php endforeach; ?>
         </div>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <?php include_once('partials/footer.php'); ?>
