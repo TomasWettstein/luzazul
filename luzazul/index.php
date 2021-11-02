@@ -15,10 +15,8 @@ include_once('partials/header.php');
 <?php include_once('partials/nav.php'); ?>
     <section>
         <p class="-titulo">Luz Azul</p>
-        <?php if(!$_GET){
-            header('Location:index.php?pagina=1');
-        }
-        if($_GET['pagina'] > $paginas || $_GET['pagina'] <= 0){
+        <?php
+        if(!$_GET || $_GET['pagina'] > $paginas && $_GET['pagina'] <= 0){
             header('Location:index.php?pagina=1');
         }
         $iniciar = ($_GET['pagina'] - 1) * $articulosXPagina;
