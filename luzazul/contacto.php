@@ -9,7 +9,7 @@ require_once('partials/header.php');
         <ul class  = "col-12 -lista-contacto">
             <li class = "col-12 col-md-4 offset-md-4 border-top">
                 <img src="img/wpp.png" alt="" class = "col-4 offset-4 col-md-4 offset-md-4">
-                <h2 class = "text-center -info-contacto">11 3443 7090</h2>
+                <h2 class = "text-center -info-contacto">+54 9 11 3443-7090</h2>
             </li>
             <li class = "col-12 col-md-4 offset-md-4 border-top">
                 <img src="img/insta.png" alt="" class = "col-4 offset-4 col-md-4 offset-md-4">
