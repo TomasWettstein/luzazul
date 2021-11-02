@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('loader.php');
-require_once('partials/navv2.php');
 $bd;
 $consulta = "SELECT * FROM productos";
 $sentencia = $bd->prepare($consulta);
@@ -13,13 +12,11 @@ $paginas = ceil($totalProductos / 4 );
 include_once('partials/header.php');
 ?>
 <body>
-<?php include_once('partials/navv2.php'); ?>
+<?php include_once('partials/nav.php'); ?>
     <section>
         <p class="-titulo">Luz Azul</p>
-        <?php if(!$_GET){
-            header('Location:index.php?pagina=1');
-        }
-        if($_GET['pagina'] > $paginas || $_GET['pagina'] <= 0){
+        <?php
+        if(!$_GET){
             header('Location:index.php?pagina=1');
         }
         $iniciar = ($_GET['pagina'] - 1) * $articulosXPagina;
