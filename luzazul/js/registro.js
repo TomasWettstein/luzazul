@@ -1,3 +1,4 @@
+//Validar registro
 let user = document.getElementById('nombre');
 let pUsuario = document.getElementById('pUsuario');
 user.onblur = function()

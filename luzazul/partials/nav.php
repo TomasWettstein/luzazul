@@ -1,127 +1,123 @@
 <?php $consultaCategoria = Conexion::consultar("*", "categorias"); ?>
-
 <?php if ($_SESSION) : ?>
-
   <?php if ($_SESSION['is_admin'] === "1") : ?>
-    <nav class="navbar navbar-expand-lg -nav">
-      <a class="navbar-brand text-danger col-5 col-md-7" href="#">Productos Luz Azul</a>
-      <button class="navbar-toggler cajaboton" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <ion-icon class="text-white boton" name="reorder-four-outline"></ion-icon>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav text-center">
-          <li class="nav-item active">
-            <a class="nav-link text-danger" href="index.php">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Productos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php foreach ($consultaCategoria as $key => $value) : ?>
-                <a href="mostrarCategoria.php?id=<?= $value['id']; ?>" class="dropdown-item text-danger"><?= $value['nombre']; ?></a>
-              <?php endforeach; ?>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-danger" href="contacto.php">Contacto</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Administrar
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item text-danger" href="crudProductos.php">Productos</a>
-              <a class="dropdown-item text-danger" href="crudCategorias.php">Categorías</a>
-            </div>
-          </li>
-          <?php if (isset($_SESSION['nombre'])) : ?>
-            <li class="nav-item dropdown">
-              <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?= $_SESSION['nombre'] ?>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item text-danger" href="logout.php">Cerrar sesion</a>
-
-              </div>
-            </li>
-          <?php endif; ?>
-        </ul>
-      </div>
-    </nav>
-  <?php endif; ?>
-
-  <?php if ($_SESSION['is_admin'] === "0") : ?>
-
-    <nav class="navbar navbar-expand-lg  -nav">
-      <a class="navbar-brand text-danger col-8" href="#">Productos Luz Azul</a>
-      <button class="navbar-toggler cajaboton" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <ion-icon class="text-white boton" name="reorder-four-outline"></ion-icon>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav text-center">
-          <li class="nav-item active">
-            <a class="nav-link text-danger" href="index.php">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Productos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php foreach ($consultaCategoria as $key => $value) : ?>
-                <a href="mostrarCategoria.php?id=<?= $value['id']; ?>" class="dropdown-item text-danger"><?= $value['nombre']; ?></a>
-              <?php endforeach; ?>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-danger" href="contacto.php">Contacto</a>
-          </li>
-          <?php if (isset($_SESSION['nombre'])) : ?>
-            <li class="nav-item dropdown">
-              <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?= $_SESSION['nombre'] ?>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item text-danger" href="logout.php">Cerrar sesion</a>
-
-              </div>
-            </li>
-          <?php endif; ?>
-        </ul>
-      </div>
-    </nav>
-  <?php endif; ?>
-<?php endif; ?>
-<?php if (!$_SESSION) : ?>
-  <nav class="navbar navbar-expand-lg  -nav">
-    <a class="navbar-brand text-danger col-7" href="#">Productos Luz Azul</a>
-    <button class="navbar-toggler cajaboton" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <ion-icon class="text-white boton" name="reorder-four-outline"></ion-icon>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand col-6 text-white" href="index.php">Productos Luz Azul</a>
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav text-center">
-        <li class="nav-item active">
-          <a class="nav-link text-danger" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="index.php">Inicio</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link text-danger  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <?php foreach ($consultaCategoria as $key => $value) : ?>
-              <a href="mostrarCategoria.php?id=<?= $value['id']; ?>" class="dropdown-item text-danger"><?= $value['nombre']; ?></a>
-            <?php endforeach; ?>
-          </div>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <?php foreach ($consultaCategoria as $key => $value) : ?>
+                <li class="dropdown-item"><a href="mostrarCategoria.php?id=<?= $value['id']; ?>"><?= $value['nombre']; ?></a></li>
+              <?php endforeach; ?>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-danger" href="contacto.php">Contacto</a>
+          <a class="nav-link active text-white" href="contacto.php">Contacto</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-danger" href="login.php">Inicia Sesión</a>
-        <li class="nav-item">
-          <a class="nav-link text-danger" href="registro.php">Registro</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Administrar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="crudProductos.php">Productos</a></li>
+            <li><a class="dropdown-item" href="crudCategorias.php">Categorias</a></li>
+          </ul>
         </li>
-      </ul>
+        <?php if (isset($_SESSION['nombre'])) : ?>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <?= $_SESSION['nombre']  ?>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="dropdown-item"><a href="logout.php">Cerrar sesion</a></li>
+          </ul>
+        </li>
+        <?php endif; ?>
     </div>
-  </nav>
+  </div>
+</nav>
 <?php endif; ?>
+  <?php if ($_SESSION['is_admin'] === "0") : ?>
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand col-6 text-white" href="#">Productos Luz Azul</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <?php foreach ($consultaCategoria as $key => $value) : ?>
+                <li class="dropdown-item"><a href="mostrarCategoria.php?id=<?= $value['id']; ?>"><?= $value['nombre']; ?></a></li>
+              <?php endforeach; ?>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="contacto.php">Contacto</a>
+        </li>
+        <?php if (isset($_SESSION['nombre'])) : ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <?= $_SESSION['nombre']  ?>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a href="logout.php">Cerrar sesion</a></li>
++          </ul>
+        </li>
+        <?php endif; ?>
+    </div>
+  </div>
+</nav>
+<?php endif; ?>
+<?php endif; ?>
+<?php if (!$_SESSION) : ?>
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand col-8 text-white" href="#">Productos Luz Azul</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="index.php">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <?php foreach ($consultaCategoria as $key => $value) : ?>
+                <li class="dropdown-item"><a href="mostrarCategoria.php?id=<?= $value['id']; ?>"><?= $value['nombre']; ?></a></li>
+              <?php endforeach; ?>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="contacto.php">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="login.php">Iniciar Sesion</a>
+        </li>
+        
+    </div>
+  </div>
+</nav>
+  <?php endif; ?>

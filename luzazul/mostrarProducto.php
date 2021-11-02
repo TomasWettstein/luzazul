@@ -12,22 +12,28 @@ include_once('partials/header.php');
 
 <body>
     <?php include_once('partials/nav.php'); ?>
-    <section class = "col-12">
-        <div class="col-12 col-md-6 offset-md-3  mt-4">
+    <section>
+        <div class = "cajaportadaproducto">
             <?php foreach ($productoSeleccionado as $key => $value) : ?>
-                <div class="col-12 col-md-12">
-                    <h2 class="text-center -titulo"><?= $value['nombre']; ?></h2>
-                    <img src="images/<?= $value['portada']; ?>" class = "col-12" alt="">
+                <h2 class="text-center -titulo"><?= $value['nombre']; ?></h2>
+                <div class = "portada">
+                    <img src="images/<?= $value['portada']; ?>" class = "img" alt="">
                 </div>
+                <?php if($value['stock'] == 1) : ?>
+                    <h4>Hay Stock</h4>
+                <?php else : ?>
+                    <h4>No hay stock</h4>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
         <div class="col-12 col-md-8 offset-md-2 mt-3 row">
             <?php foreach ($consulta as $key => $value) : ?>
                 <div class="col-12 col-md-6 mt-3">
-                    <img src="images/<?= $value['imagen']; ?>" class = "col-12 ml-3 -full-screen" alt="">
+                    <img src="images/<?= $value['imagen']; ?>" class = "img ml-3 -full-screen" alt="">
                 </div>
             <?php endforeach; ?>
         </div>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <script src="js/fullscreen.js"></script>
     <?php include_once('partials/footer.php'); ?>

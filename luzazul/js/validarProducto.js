@@ -1,4 +1,5 @@
-let nombre = document.getElementById('nombre');
+//Validar producto
+let nombre = document.getElementById('nombreproducto');
 let pNombre = document.getElementById('errorNombre');
 
 nombre.addEventListener('blur', function(event)
@@ -7,9 +8,11 @@ nombre.addEventListener('blur', function(event)
     if (this.value == "") 
     {
         pNombre.innerText = "Este campo es obligatorio"
+    }else{
+        pNombre.innerText = "";
     }
 });
-let portada = document.getElementById('portada');
+let portada = document.getElementById('portadaproducto');
 let pPortada= document.getElementById('errorPortada');
 
 portada.addEventListener('blur', function(event)
@@ -22,7 +25,7 @@ portada.addEventListener('blur', function(event)
         pPortada.innerText= "";
     }
 });
-let imagenes = document.getElementById('imagenes');
+let imagenes = document.getElementById('imagenesproducto');
 let pImagenes= document.getElementById('errorImagenes');
 imagenes.addEventListener('blur', function(event)
 {
@@ -46,7 +49,7 @@ imagenes.addEventListener('blur', function(event)
         }
     }
 });
-let categoria = document.getElementById('categoria');
+let categoria = document.getElementById('categoriaproducto');
 let pCategoria = document.getElementById('errorCategoria');
 categoria.addEventListener('blur', function(event){
     event.preventDefault();

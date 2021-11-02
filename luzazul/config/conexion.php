@@ -152,8 +152,9 @@ class Conexion{
     {
         $nombre = $datos['nombre'];
         $categoria = $datos['categoria'];
+        $stock = $datos['stock'];
         $db = Conexion::conectar();
-        $sql = "UPDATE `luzazul`.`productos` SET `nombre` = '$nombre', `portada` = '$portada', `categoria_id` = '$categoria' WHERE (`id` = '$id');";
+        $sql = "UPDATE `luzazul`.`productos` SET `nombre` = '$nombre', `portada` = '$portada', `categoria_id` = '$categoria', `stock` = '$stock' WHERE (`id` = '$id');";
         $modificar = $db->prepare($sql);
         $modificar->execute();
     }

@@ -41,8 +41,8 @@ include_once('partials/header.php');
   <?php
   include_once('partials/nav.php');
   ?>
-  <section class="col- 12 col-md-12">
-    <h2 class="text-center -titulo">Iniciar sesion</h2>
+  <section>
+    <h2 class="-titulo">Iniciar sesion</h2>
     <form action="login.php" method="POST" class="col-12 col-md-4 offset-md-4 mt-5 -form d-flex flex-column  ">
       <div class="form-group d-flex flex-column">
         <label for="exampleInputEmail1" class="text-danger d-flex ">Escriba su E-mail</label>
@@ -61,6 +61,7 @@ include_once('partials/header.php');
       <button type="submit" class="btn btn-dark text-center col-4 offset-4">Enviar</button>
     </form>
   </section>
+  <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
   <?php
   include_once('partials/footer.php');
   ?>

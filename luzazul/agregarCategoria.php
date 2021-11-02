@@ -19,8 +19,8 @@ include_once('partials/header.php');
 
 <body>
 <?php include_once('partials/nav.php');?>
-<section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center -titulo">Agregar categoria</h1>
+<section>
+        <h1 class="-titulo">Agregar categoria</h1>
         <form action="agregarCategoria.php" method="POST" class="_form_login col-12 col-md-4 offset-md-4 mt-5 -form d-flex flex-column  ">
             <div class="form-group">
                 <label class="text-danger" for="exampleFormControlInput1">Nombre del producto</label>
@@ -39,14 +39,16 @@ include_once('partials/header.php');
             <button type="submit" class="btn btn-dark text-center col-4 offset-4">Agregar</button>
         </form>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <?php include_once('partials/footer.php'); ?>
 <?php endif; ?>
 <?php if($_SESSION['is_admin'] === 0) :?>
 <body>
 <?php include_once('partials/nav.php'); ?>
-    <section class="col- 12 col-md-12 bg-danger">
-        <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
+    <section>
+        <h1 class="-titulo">No se puede acceder a este sitio.</h1>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <?php include_once('partials/footer.php'); ?>
 
 <?php endif;?>
@@ -54,8 +56,9 @@ include_once('partials/header.php');
 <?php if (!$_SESSION) :?>
     <body>
     <?php include_once('partials/nav.php'); ?>
-    <section class="col- 12 col-md-12">
-        <h1 class="col-12 text-center">No se puede acceder a este sitio.</h1>
+    <section>
+        <h1 class="-titulo">No se puede acceder a este sitio.</h1>
     </section>
+    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <?php include_once('partials/footer.php'); ?>
 <?php endif; ?>

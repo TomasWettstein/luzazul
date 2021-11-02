@@ -4,6 +4,7 @@ class Producto
     public $nombre;
     public $portada;
     public $categoria_id;
+    public $stock;
 
     public function __construct($nombre, $portada,  $categoria_id)
     {
@@ -26,6 +27,10 @@ class Producto
     {
         $this->categoria_id = $categoria_id;
     }
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+    }
     //GETTERS
 
     public function getProductName()
@@ -39,5 +44,9 @@ class Producto
     public function getCategoria()
     {
         return $this->categoria_id;
+    }
+    public function getStock()
+    {
+        return $this->stock;
     }
 }
