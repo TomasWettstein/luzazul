@@ -21,5 +21,4 @@ require_once('partials/header.php');
             </li>
         </ul>
     </section>
-    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <?php require_once('partials/footer.php'); ?>

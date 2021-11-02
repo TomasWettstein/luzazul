@@ -18,7 +18,6 @@ include_once('partials/header.php');
     <section>
         <h1 class="-titulo">No se puede acceder a este sitio.</h1>
     </section>
-    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <?php include_once('partials/footer.php'); ?>
 <?php endif; ?>
 <?php endif; ?>
@@ -28,6 +27,5 @@ include_once('partials/header.php');
     <section>
         <h1 class="-titulo">No se puede acceder a este sitio.</h1>
     </section>
-    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <?php include_once('partials/footer.php'); ?>
 <?php endif;?>

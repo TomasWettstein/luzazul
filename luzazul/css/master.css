@@ -2,15 +2,27 @@ html {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
   }
 body{
     background-color: rgba(169, 40, 40, 1);
     font-family: 'Spirax', cursive;
     font-size: 18px;
     height: 100%;
-
+    margin: 0;
+    margin-bottom: 40px;
 }
 nav{
+    background-color: rgb(70,37,37);
+}
+.itemDrop :hover{
+    color: black;
+}
+.itemDrop a{
+    color: white;
+}
+
+.lista{
     background-color: rgb(70,37,37);
 }
 /* Paginacion */
@@ -124,6 +136,7 @@ nav{
     background-color: transparent;
     bottom: 0;
     font-size: 13px;
+    position: absolute;
     width: 100%;
     color: white;
 }

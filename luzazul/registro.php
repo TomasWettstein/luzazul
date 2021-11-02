@@ -60,6 +60,5 @@ include_once('partials/header.php');
 
     </form>
   </section>
-  <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <script src="js/registro.js"></script>
 <?php include_once('partials/footer.php'); ?>

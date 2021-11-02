@@ -34,6 +34,5 @@ include_once('partials/header.php');
             <?php endforeach; ?>
         </div>
     </section>
-    <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
     <script src="js/fullscreen.js"></script>
     <?php include_once('partials/footer.php'); ?>
