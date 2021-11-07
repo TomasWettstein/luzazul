@@ -31,6 +31,7 @@ if ($_POST)
             $imagen = Conexion::armarFoto($_FILES['arrayImg']['name'][$i], $_FILES['arrayImg']['tmp_name'][$i]);
             /* Tengo que crear esta funcion de abajo para agregar las imagenes a la base de datos*/
             Conexion::agregarImagen($imagen, $idVerificado);
+            
         }
         header('Location: crudProductos.php');
     }

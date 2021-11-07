@@ -1,0 +1,9 @@
+{
+    "require": {
+        "mercadopago/dx-php": "^2.4"
+    },
+    "composer": {
+        "composer-runtime-api": "^2.0"
+    }
+    
+}

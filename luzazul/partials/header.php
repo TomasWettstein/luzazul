@@ -7,5 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/master.css" rel="stylesheet">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <title>LuzAzul</title>
 </head>

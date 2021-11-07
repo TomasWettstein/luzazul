@@ -12,7 +12,7 @@ include_once('partials/header.php');
     <?php include_once('partials/nav.php'); ?>
     <section>
         <h1 class="-titulo">Administrar categorías</h1>
-        <button class="btn btn-primary col-12 col-md-2 offset-md-5"><a class="text-white" href="agregarCategoria.php">Agregar Categoria</a></button>
+        <a class="text-white" href="agregarCategoria.php"><button class="btn btn-primary col-12 col-md-2 offset-md-5">Agregar Categoria</button></a>
         <table class="table col-12 col-md-8 offset-md-2 mt-5 table-hover">
             <thead class="col-8 col-md-12">
                 <tr>
@@ -26,7 +26,7 @@ include_once('partials/header.php');
             <tbody>
                 <?php foreach ($consulta as $key => $value) : ?>
                 <tr>
-                    <td class="text-white"><?= $value['id']; ?></td>
+                    <td class="text-white"><?= $key + 1; ?></td>
                     <td class="text-white"><?= $value['nombre']; ?></td>
                     <td class="text-white">$<?= $value['precio']; ?></td>
                     <td class="text-white"><a href="editarCategoria.php?id=<?= $value['id']; ?>"><ion-icon name="build-outline"></ion-icon></a></td>
