@@ -1,5 +1,23 @@
 <footer class = "footer">Copyright © 2021 Tomas Martín Fernandez Wettstein - Todos los derechos reservados.</footer>
 <!-- <script src="js/mercadoPago.js"></script> -->
+<script src="js/fullscreen.js"></script>
+<script >
+    const mp = new MercadoPago('TEST-967f4103-021d-4de6-9bfd-aceddc6d75b4', {
+    locale: 'es-AR',
+    locale: 'es-MX'
+});
+
+  // Inicializa el checkout
+  mp.checkout({
+        preference: {
+            id: '<?php echo $preference->id; ?>'
+        },
+        render: {
+            container: '.pagar', // Indica el nombre de la clase donde se mostrará el botón de pago
+            label: 'Comprar', // Cambia el texto del botón de pago (opcional)
+        }
+    });
+</script>
 <script src="https://sdk.mercadopago.com/js/v2"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
