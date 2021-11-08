@@ -8,6 +8,12 @@ $sqlImagenes = "SELECT * FROM imagenes WHERE producto_id = $id_producto";
 $query = $bd->prepare($sqlImagenes);
 $query->execute();
 $consulta = $query-> fetchAll(PDO :: FETCH_ASSOC);
+
+$precio = "SELECT categorias.precio FROM categorias INNER JOIN productos on productos.categoria_id = categorias.id  WHERE productos.id = $id_producto";
+$query2 = $bd->prepare($precio);
+$query2->execute();
+$precioProducto = $query2-> fetchAll((PDO :: FETCH_ASSOC));
+
 // $mercadoPago= Conexion::mercadoPago($id_producto, $bd);
 ?>
 <?php
@@ -25,6 +31,7 @@ include_once('partials/header.php');
                         <img src="images/<?= $value['portada']; ?>" class = "img" alt="">
                         <?php if($value['stock'] == 1) : ?>
                         <h2 class="text-white ">Hay Stock de este producto!!</h2>
+                        <h4 class="text-white">$<?= $precioProducto[0]['precio'];?></h4>
                         <div class="pagar"></div>
                         <?php else : ?>
                             <h2 class="text-danger">No hay stock</h2>

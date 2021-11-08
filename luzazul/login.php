@@ -58,7 +58,7 @@ include_once('partials/header.php');
           <p class="text-danger"> <?= $errores['contraseña'] ?> </p>
         <?php endif ?>
       </div>
-      <button type="submit" class="btn btn-dark text-center col-4 offset-4">Enviar</button>
+      <button type="submit" class="btn btn-dark text-center col-4 offset-4 mb-2">Enviar</button>
     </form>
   </section>
   <?php

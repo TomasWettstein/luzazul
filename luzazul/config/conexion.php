@@ -124,7 +124,7 @@ class Conexion{
         $portada = $imagen;
         $categoria_id = $producto->getCategoria();
         $db = Conexion :: conectar();
-        $sql = "INSERT INTO productos (nombre, portada, categoria_id) values (:nombre, :portada , :categoria_id)";
+        $sql = "INSERT INTO productos (nombre, portada, categoria_id, stock) values (:nombre, :portada , :categoria_id, 1)";
         $query = $db-> prepare($sql);
         $query-> bindValue(':nombre', $nombre, PDO::PARAM_STR);
         $query-> bindValue(':portada', $portada, PDO::PARAM_STR);
