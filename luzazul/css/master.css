@@ -5,7 +5,7 @@ html {
     position: relative;
   }
 body{
-    background-color: rgba(169, 40, 40, 1);
+    background-color: rgb(180,231,229);
     font-family: 'Spirax', cursive;
     font-size: 18px;
     height: 100%;
@@ -13,17 +13,17 @@ body{
     margin-bottom: 40px;
 }
 nav{
-    background-color: rgb(70,37,37);
+    background-color: rgb(124,161,226);
 }
 .itemDrop :hover{
     color: black;
 }
 .itemDrop a{
-    color: white;
+    color: black;
 }
 
 .lista{
-    background-color: rgb(70,37,37);
+    background-color: rgb(124,161,226);;
 }
 /* Paginacion */
 .navpaginacion{

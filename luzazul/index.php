@@ -44,7 +44,7 @@ include_once('partials/header.php');
             </ul>
         </div>
     </section>
-    <h3 class = "-descrip-index col-12 col-md-8 offset-md-2">Regalería de autora
+    <h3 class = "-descrip-index col-12 col-md-8 offset-md-2 text-dark">Regalería de autora
     para disfrutar el arte en
     nuestros objetos cotidianos
     te acercamos una variedad de
@@ -57,7 +57,7 @@ include_once('partials/header.php');
         <div class="col-12 col-md-12 d-flex flex-row flex-wrap">
             <?php foreach ($cantidadProductos as $key => $value) : ?>
                 <div class="col-12 col-md-3 mt-3 cajaproducto">
-                    <h4 class="text-center text-white"><?= $value['nombre']; ?></h4>
+                    <h4 class="text-center text-dark"><?= $value['nombre']; ?></h4>
                     <a href="mostrarProducto.php?id=<?= $value['id']; ?>"><img src="images/<?= $value['portada']; ?>" class = "indeximg" alt=""></a>
                 </div>
             <?php endforeach; ?>
@@ -73,9 +73,9 @@ include_once('partials/header.php');
         </nav>
     </section>
     <section>
-        <h4 class="text-center text-white">Te gustaron nuestros productos ¿queres realizar una compra?</h4>
+        <h4 class="text-center text-dark">Te gustaron nuestros productos ¿queres realizar una compra?</h4>
         <div class="d-flex col-12 col">
-            <button class="btn btn-success col-12 col-sm-4 offset-sm-4 col-md-2 offset-md-5 mb-3"><a class="text-white text-center col-12" href="contacto.php">Contactenos</a></button>
+            <button class="btn btn-success col-12 col-sm-4 offset-sm-4 col-md-2 offset-md-5 mb-3"><a class="text-dark text-center col-12" href="contacto.php">Contactenos</a></button>
         </div>
     </section>
     <?php

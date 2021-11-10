@@ -38,8 +38,8 @@ include_once('partials/header.php');
                     <div class="portada text-center">
                         <img src="images/<?= $value['portada']; ?>" class="img" alt="">
                         <?php if ($value['stock'] == 1) : ?>
-                            <h2 class="text-white ">Hay Stock de este producto!!</h2>
-                            <h4 class="text-white">$<?= $precioProducto[0]['precio']; ?></h4>
+                            <h2 class="text-dark ">Hay Stock de este producto!!</h2>
+                            <h4 class="text-dark">$<?= $precioProducto[0]['precio']; ?></h4>
                             <form action="" id="form" method="POST">
                                 <select name="cantidad" id="select">
                                     <option value="1">1</option>
@@ -47,8 +47,8 @@ include_once('partials/header.php');
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
-                                <input type="hidden" name="nombre" value="<?= $value['nombre']; ?>">
-                                <input type="hidden" name="precio" value="<?= $precioProducto[0]['precio']; ?>">
+                                <input id="nombre" type="hidden" name="nombre" value="<?= $value['nombre']; ?>">
+                                <input  id="precio" type="hidden" name="precio" value="<?= $precioProducto[0]['precio']; ?>">
                             </form>
                             <div id="btn" class="pagar"></div>
 
