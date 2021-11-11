@@ -8,8 +8,13 @@ MercadoPago\SDK::setAccessToken('TEST-6183583317540715-110716-f01b14419e45300c86
 // SDK de Mercado Pago
 $preference = new MercadoPago\Preference();
 if ($_POST) {
-    echo 'hola';
-    var_dump('Hola soy post' ,$_POST);   
+    $datos = json_decode(file_get_contents('php://input'));
+    var_dump($datos);
+
+// if (isset($datos->valor->toolBox)) {
+// 	include('./responder-toolBox.php');
+// 	die();
+// }
 }
 //    $cantidad = $_POST['cantidad'];
 //    $precio = $_POST['precio'];
