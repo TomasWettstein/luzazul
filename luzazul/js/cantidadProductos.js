@@ -6,29 +6,24 @@ select.addEventListener('change', function (e) {
      let cantidad = e.target.value
      let nombre = document.getElementById('nombre').value
      let precio = document.getElementById('precio').value
-     let arrayProductos = [];
+     let arrayProductos = []
      for (let i = 0; i < cantidad; i++) {
-          arrayProductos.push([nombre, cantidad, precio]);
+         let producto = {"nombre" : `${nombre}`, "cantidad": `${cantidad}`, "precio":  `${precio}`}
+         arrayProductos.push(producto)
      }
-     let json = JSON.stringify(arrayProductos);
-     console.log(json)
+     // let json = JSON.stringify(arrayProductos);
+     console.log(JSON.stringify(arrayProductos))
+     
      //  form.submit();
      fetch('http://localhost:8080/proyectos/luzazul/luzazul/productos.php',
           {
+               method: 'POST',
+               body: JSON.stringify(arrayProductos),
                headers: {
                     'Content-Type': 'application/json; charset=utf-8'
-               },
-               dataType: 'json',
-               method: 'POST',
-               body: json
+               }
           })
-          .then(function (response) {
-               return response.json()
-           })
-           .then(function (result) {
-               alert(result)
-           })
-           .catch (function (error) {
-               console.log('Request failed', error)
-           })
+          .then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response));
 })

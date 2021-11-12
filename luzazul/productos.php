@@ -8,6 +8,7 @@ MercadoPago\SDK::setAccessToken('TEST-6183583317540715-110716-f01b14419e45300c86
 // SDK de Mercado Pago
 $preference = new MercadoPago\Preference();
 if ($_POST) {
+    var_dump($_POST);
     $datos = json_decode(file_get_contents('php://input'));
     var_dump($datos);
 
